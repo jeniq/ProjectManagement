@@ -1,0 +1,19 @@
+package com.company.dao.interfaces;
+
+import com.company.entities.Project;
+
+import java.util.List;
+
+/**
+ * This interface sets rules for actions with 'project' table in database.
+ */
+public interface ProjectDao extends DmlMethod<Project>{
+    // Find project for user with id
+    Project getProjectById(int id);
+
+    // Find all projects
+    List<Project> getProjectList();
+
+    // Find project(s) for user with 'id'
+    List<Project> getProjectList(long id);
+}
