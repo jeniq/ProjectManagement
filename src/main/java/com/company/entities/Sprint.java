@@ -1,9 +1,14 @@
 package com.company.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Sprint {
     private Long id;
     private Boolean isDone;
-    private long projectId;
+    private Long projectId;
+    private Integer progress;
+    private List<Task> taskList = new ArrayList<>();
 
     public Sprint() {
     }
@@ -24,11 +29,31 @@ public class Sprint {
         isDone = done;
     }
 
+    public void setProjectId(Long projectId) {
+        this.projectId = projectId;
+    }
+
     public long getProjectId() {
         return projectId;
     }
 
     public void setProjectId(long projectId) {
         this.projectId = projectId;
+    }
+
+    public Integer getProgress() {
+        return progress;
+    }
+
+    public void setProgress(Integer progress) {
+        this.progress = progress;
+    }
+
+    public List<Task> getTaskList() {
+        return taskList;
+    }
+
+    public void setTaskList(List<Task> taskList) {
+        this.taskList = taskList;
     }
 }

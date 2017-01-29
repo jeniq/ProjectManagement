@@ -1,7 +1,12 @@
 package com.company.entities;
 
-import java.util.Date;
+import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+@Service
 public class Task {
     private Long id;
     private Long sprint;
@@ -11,6 +16,8 @@ public class Task {
     private Date startDate;
     private Integer estimateTime;
     private Date endDate;
+    private Integer weekNo;
+    private List<Member> employeeList = new ArrayList<>();
 
     public Task() {
     }
@@ -47,11 +54,11 @@ public class Task {
         this.description = description;
     }
 
-    public Boolean getDone() {
+    public Boolean getIsDone() {
         return isDone;
     }
 
-    public void setDone(Boolean done) {
+    public void setIsDone(Boolean done) {
         isDone = done;
     }
 
@@ -77,5 +84,29 @@ public class Task {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public Boolean getDone() {
+        return isDone;
+    }
+
+    public void setDone(Boolean done) {
+        isDone = done;
+    }
+
+    public Integer getWeekNo() {
+        return weekNo;
+    }
+
+    public void setWeekNo(Integer weekNo) {
+        this.weekNo = weekNo;
+    }
+
+    public List<Member> getEmployeeList() {
+        return employeeList;
+    }
+
+    public void setEmployeeList(List<Member> employeeList) {
+        this.employeeList = employeeList;
     }
 }

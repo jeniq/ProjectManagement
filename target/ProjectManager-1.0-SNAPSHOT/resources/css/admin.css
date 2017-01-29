@@ -1,4 +1,16 @@
-.navbar, .logOn, .btn {
+.navbar, .logOn, .btn, a {
+  outline: 0 !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+#name_sys {
+  color: #fff;
+}
+
+select {
   outline: 0 !important;
 }
 
@@ -10,6 +22,14 @@
   margin-top: 55px;
   height: auto;
   padding: 0;
+  float: left;
+}
+
+.pr {
+  width: 200px;
+}
+
+.del {
   float: left;
 }
 
@@ -26,12 +46,21 @@ table {
 }
 
 .sprint-heading {
-  background-color: #fff !important;
+  background-color: #337ab7 !important;
+  color: #fff !important;
+}
+
+.task-heading {
+  background-color: #d9edf7 !important;
+  color: #337ab7 !important;
 }
 
 .panel-task {
-  background-color: #111;
-  color: #111;
+  background-color: #f5f5f5;
+  -webkit-border-radius: 0 !important;
+  border-radius: 0 !important;
+  border-style: 1px solid transparent;
+  border-color: #ddd;
 }
 
 #div1 {
@@ -40,7 +69,7 @@ table {
   padding: 10px;
   border: 1px solid #eee;
   -webkit-border-radius: 5px;
-          border-radius: 5px;
+  border-radius: 5px;
 }
 
 .media-links {
@@ -64,5 +93,8 @@ table {
   }
   .navbar-text {
     text-align: center;
+  }
+  .pr {
+    width: 200px;
   }
 }

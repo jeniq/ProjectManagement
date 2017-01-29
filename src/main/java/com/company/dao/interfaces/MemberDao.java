@@ -13,4 +13,5 @@ public interface MemberDao extends DmlMethod<Member>{
     Member getMemberByEmailPassword(String email, String password);
     List<Member> getAllMembers();
     List<Member> getMemberByPosition(Position position);
+    List<Member> getEmployeeListByTask(long id);
 }

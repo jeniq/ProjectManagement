@@ -17,6 +17,11 @@ public class ProjectService implements SearchProject, AlterEntity<Project>{
     private ProjectDao projectDao;
 
     @Override
+    public Project getProjectById(Integer id) {
+        return projectDao.getProjectById(id);
+    }
+
+    @Override
     public List<Project> getProjectList(Member member) {
         if (member.getAccessType().getTypeName().equals("Administrator")){return projectDao.getProjectList();
         }
@@ -25,23 +30,20 @@ public class ProjectService implements SearchProject, AlterEntity<Project>{
     }
 
     @Override
-    public Project details() {
-        return null;
+    public Project details(Integer id) {
+        return projectDao.getProjectById(id);
     }
 
     @Override
     public boolean add(Project project) {
         int insertResult = projectDao.insert(project);
 
-        if (insertResult < 1){
-            return false;
-        }
-        return true;
+        return insertResult < 1 ? false : true;
     }
 
     @Override
-    public boolean remove(Project project) {
-        return false;
+    public Integer remove(Project project) {
+        return projectDao.delete(project);
     }
 
     @Override

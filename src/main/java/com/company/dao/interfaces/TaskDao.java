@@ -9,4 +9,8 @@ public interface TaskDao extends DmlMethod<Task>{
 
     // Get task list for sprint with 'id'
     List<Task> getTaskListBySprintId(long id);
+
+    //
+    int getEmployeeLoadHoursById(long id, int week);
+
 }

@@ -70,4 +70,5 @@ public class Member {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

@@ -7,6 +7,9 @@ import java.util.List;
 public interface SearchSprint {
     Sprint getSprintById(long id);
 
-    // Search sprints for project with 'id'
+    // Search sprint(s) for project with 'id'
     List<Sprint> getSprintList(long id);
+
+    // Search sprint(s) for member with 'id'
+    List<Sprint> getSprintListByMember(long id);
 }

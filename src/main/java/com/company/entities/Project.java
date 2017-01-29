@@ -7,6 +7,7 @@ public class Project {
     private String title;
     private Date startDate;
     private Date endDate;
+    private Integer progress;
 
     public Project() {
     }
@@ -41,5 +42,13 @@ public class Project {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public Integer getProgress() {
+        return progress;
+    }
+
+    public void setProgress(Integer progress) {
+        this.progress = progress;
     }
 }

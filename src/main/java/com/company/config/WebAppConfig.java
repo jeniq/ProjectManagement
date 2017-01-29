@@ -1,7 +1,7 @@
 package com.company.config;
 
 import com.company.filters.LoginPageInterceptor;
-import oracle.jdbc.pool.OracleDataSource;
+import org.postgresql.ds.PGPoolingDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -53,18 +53,16 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
 
     @Bean(name = "dataSource")
     public DataSource getDataSource() throws SQLException {
-        OracleDataSource ds = new OracleDataSource();
+        PGPoolingDataSource ds = new PGPoolingDataSource();
 
-     //   ds.setDriverClassName(env.getProperty("jdbc.oracle.driverClass"));
-        //ds.setUser(env.getProperty("jdbc.oracle.username"));
-        //ds.setPassword(env.getProperty("jdbc.oracle.password"));
-        //ds.setURL(env.getProperty("jdbc.oracle.url"));
-        ds.setDriverType("thin");
-        ds.setServerName("localhost");
-        ds.setDatabaseName("xe");
-        ds.setPortNumber(1521);
-        ds.setUser("ProjectManager");
-        ds.setPassword("ProjectManager");
+     //   ds.setUrl(env.getProperty("jdbc.postgresql.url"));
+//        ds.setUser(env.getProperty("jdbc.postgresql.username"));
+  //      ds.setPassword(env.getProperty("jdbc.postgresql.password"));
+
+        ds.setUrl(env.getProperty("jdbc.postgresql_local.url"));
+        ds.setUser(env.getProperty("jdbc.postgresql_local.username"));
+        ds.setPassword(env.getProperty("jdbc.postgresql_local.password"));
+
 
         return ds;
     }

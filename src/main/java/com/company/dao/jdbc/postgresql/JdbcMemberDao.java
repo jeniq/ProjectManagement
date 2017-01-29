@@ -1,0 +1,149 @@
+package com.company.dao.jdbc.postgresql;
+
+import com.company.dao.interfaces.MemberDao;
+import com.company.entities.AccessType;
+import com.company.entities.Member;
+import com.company.entities.Position;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.stereotype.Component;
+
+import javax.sql.DataSource;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+@Component("jdbcMemberDao")
+public class JdbcMemberDao implements MemberDao {
+    // Constant
+    private static final String MEMBER = "member";
+    private static final String ID = "id";
+    private static final String NAME = "name";
+    private static final String SURNAME = "surname";
+    private static final String EMAIL = "email";
+    private static final String ACCESS_TYPE = "access_type";
+    private static final String ACCESS_TYPE_NAME = "access_name";
+    private static final String POSITION = "position";
+    private static final String POSITION_POS_NAME = "pos_name";
+    private static final String PASSWORD = "password";
+    private static final String TASK_ID = "task_id";
+
+    // Queries
+    private static final String DELETE = "DELETE FROM \"ProjectManagement\".member WHERE id = :id";
+    private static final String UPDATE = "UPDATE \"ProjectManagement\".member SET name = :name, surname = :surname, " +
+            "email = :email, access_type = :type, position = :position, password = :password" +
+            "WHERE id = :id";
+    private static final String SELECT_BY_ID = "SELECT * FROM \"ProjectManagement\".member WHERE id = :id";
+    private static final String SELECT_BY_EMAIL_PASSWORD = "SELECT * FROM \"ProjectManagement\".member m JOIN \"ProjectManagement\".access_type a ON m.access_type = a.id " +
+            "LEFT JOIN \"ProjectManagement\".position p ON m.position = p.id " +
+            "WHERE email = :email AND password = :password";
+    private static final String SELECT_ALL_MEMBERS = "SELECT * FROM \"ProjectManagement\".member m JOIN \"ProjectManagement\".access_type a ON m.access_type = a.id " +
+            "LEFT JOIN \"ProjectManagement\".position p ON m.position = p.id";
+    private static final String SELECT_BY_POSITION = "SELECT * FROM \"ProjectManagement\".member WHERE position = :position";
+    private static final String SELECT_EMPLOYEE_BY_TASK = "SELECT * FROM \"ProjectManagement\".task_executor tex JOIN " +
+            "\"ProjectManagement\".member m ON tex.employee_id = m.id JOIN \"ProjectManagement\".position p ON m.position = p.id JOIN " +
+            "\"ProjectManagement\".access_type at ON m.access_type = at.id " +
+            "WHERE task_id = :task_id";
+
+    private SimpleJdbcInsert insertMember;
+    private NamedParameterJdbcTemplate jdbcTemplate;
+
+    @Autowired
+    public void setDataSource(DataSource dataSource){
+        this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
+        this.insertMember = new SimpleJdbcInsert(dataSource).withTableName(MEMBER).usingColumns(
+                NAME,
+                SURNAME,
+                EMAIL,
+                ACCESS_TYPE,
+                POSITION,
+                PASSWORD
+        );
+    }
+
+    @Override
+    public int insert(Member member) {
+        MapSqlParameterSource params = new MapSqlParameterSource();
+
+        params.addValue(NAME, member.getName());
+        params.addValue(SURNAME, member.getSurname());
+        params.addValue(EMAIL, member.getEmail());
+        params.addValue(ACCESS_TYPE, member.getAccessType());
+        params.addValue(POSITION, member.getPosition());
+        params.addValue(PASSWORD, member.getPassword());
+
+        return insertMember.execute(params);
+    }
+
+    @Override
+    public int delete(Member member) {
+
+        return 0;
+    }
+
+    @Override
+    public int update(Member member) {
+
+        return 0;
+    }
+
+    @Override
+    public Member getMemberById(int id) {
+        return null;
+    }
+
+    @Override
+    public Member getMemberByEmailPassword(String email, String password) {
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue(EMAIL, email);
+        params.addValue(PASSWORD, password);
+
+        try {
+            return jdbcTemplate.queryForObject(SELECT_BY_EMAIL_PASSWORD, params, new MemberRowMapper());
+        }catch (Exception e){
+            System.out.println(e);
+            return null;
+        }
+
+    }
+
+    @Override
+    public List<Member> getAllMembers() {
+        return jdbcTemplate.query(SELECT_ALL_MEMBERS, new MemberRowMapper());
+    }
+
+    @Override
+    public List<Member> getMemberByPosition(Position position) {
+        return null;
+    }
+
+    @Override
+    public List<Member> getEmployeeListByTask(long id) {
+        MapSqlParameterSource params = new MapSqlParameterSource();
+
+        params.addValue(TASK_ID, id);
+
+        return jdbcTemplate.query(SELECT_EMPLOYEE_BY_TASK, params, new JdbcMemberDao.MemberRowMapper());
+
+    }
+
+    private static final class MemberRowMapper implements RowMapper<Member>{
+
+        @Override
+        public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
+            Member member = new Member();
+
+            member.setId(rs.getLong(ID));
+            member.setName(rs.getString(NAME));
+            member.setSurname(rs.getString(SURNAME));
+            member.setEmail(rs.getString(EMAIL));
+            member.setPosition(new Position(rs.getLong(POSITION), rs.getString(POSITION_POS_NAME)));
+            member.setAccessType(new AccessType(rs.getLong(ACCESS_TYPE), rs.getString(ACCESS_TYPE_NAME)));
+            member.setPassword(rs.getString(PASSWORD));
+            return member;
+        }
+    }
+}
