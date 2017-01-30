@@ -1,5 +1,6 @@
 package com.company.controllers;
 
+import com.company.entities.Member;
 import com.company.entities.Project;
 import com.company.entities.Sprint;
 import com.company.entities.Task;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -36,17 +38,24 @@ public class ProjectController {
     @Autowired
     TaskService taskService;
 
-    @RequestMapping(value = "/newProject")
-    public String createProject(){
+    @RequestMapping(value = "/newProject", method = RequestMethod.GET)
+    public ModelAndView newProject(){
+        ModelAndView modelAndView = new ModelAndView();
+        List<Member> projectManagerList = memberService.getProjectManagerList();
 
-        return null;
+        modelAndView.addObject(Constant.PROJECT_MANAGER_LIST, projectManagerList);
+        modelAndView.addObject(Constant.PROJECT, new Project());
+
+        modelAndView.setViewName(Page.CREATE_PROJECT_POPUP);
+
+        return modelAndView;
     }
 
     @RequestMapping(value = "/addProject", method = RequestMethod.POST)
-    public String addProject(@ModelAttribute Project project){
-        projectService.add(project);
-        // possible to make pop-up with result of adding
-        return ""; // to admin page
+    public String addProject(@ModelAttribute("project") Project project, HttpServletRequest request){
+        int projectManagerId = Integer.parseInt(request.getParameter(Constant.PROJECT_MANAGER));
+        projectService.create(project, projectManagerId);
+        return Page.REDIRECT_ADMINISTRATOR;
     }
 
     @RequestMapping(value ="/project{id}", method = RequestMethod.GET)

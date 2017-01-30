@@ -127,6 +127,8 @@
                     </tbody>
                 </table>
             </div>
+                <%--<button class="btn btn-primary" data-toggle="modal" data-target="#createProject">Create new project</button>--%>
+            <a href="/newProject" class="btn btn-primary createProjectBtn" data-target="#createProject" onclick="test()">Create new project</a>
         </div>
     </section>
 </section>
@@ -136,6 +138,11 @@
 <div class="modal fade" id="projectInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
 
 </div>
+
+<div class="modal fade" id="createProject" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+
+</div>
+
 
 <!-- LOG_OUT -->
 <div class="modal fade" id="logOut" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -153,7 +160,6 @@
                 <button type="submit" class="btn btn-primary" >Log out</button>
                 </form>
             </div>
-            </form>
         </div>
     </div>
 </div>

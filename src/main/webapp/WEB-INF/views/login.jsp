@@ -126,7 +126,7 @@
                         <label>Project Manager</label>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <p>roman.opeida@gmail.com</p>
+                        <p>svitlana_filipova@gmail.com</p>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <p>12345</p>
@@ -138,7 +138,7 @@
                         <label>Customer</label>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <p>gr.yevhen@gmail.com</p>
+                        <p>bogunkov@gmail.com</p>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <p>12345</p>

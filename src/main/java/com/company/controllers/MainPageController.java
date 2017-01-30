@@ -4,7 +4,7 @@ import com.company.entities.Member;
 import com.company.entities.Project;
 import com.company.services.impls.MemberService;
 import com.company.services.impls.ProjectService;
-import com.company.services.impls.SprintService;
+import com.company.services.impls.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,7 +25,7 @@ public class MainPageController {
     @Autowired
     private ProjectService projectService;
     @Autowired
-    private SprintService sprintService;
+    private TaskService taskService;
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public ModelAndView projectList(@ModelAttribute(Constant.MEMBER) Member member){
@@ -36,6 +36,7 @@ public class MainPageController {
 
         modelAndView.addObject(Constant.PROJECT_LIST, projectList);
         modelAndView.addObject(Constant.MEMBER_LIST, memberList);
+
         modelAndView.setViewName(Page.MAIN_ADMIN);
         return modelAndView;
     }
@@ -53,16 +54,23 @@ public class MainPageController {
 
     @RequestMapping(value = "/employee")
     public String employeeMainPage(@ModelAttribute(Constant.MEMBER) Member member, HttpServletRequest request){
-        request.setAttribute(Constant.SPRINT_LIST, sprintService.getSprintList(member.getId()));
         if (member.getPosition().getPosName().equals(Constant.PROJECT_MANAGER)){
             return Page.REDIRECT_PROJECT_MANANGER;
         }
+
+        request.setAttribute(Constant.TASK_LIST, taskService.getTaskByEmpId(member.getId()));
+
         return Page.MAIN_EMPLOYEE;
     }
 
     @RequestMapping(value = "/projectManager")
-    public String projectManagerMainPage(){
-        return Page.MAIN_PROJECT_MANAGER;
+    public ModelAndView projectManagerMainPage(@ModelAttribute(Constant.MEMBER) Member member){
+        ModelAndView modelAndView = new ModelAndView();
+
+        modelAndView.addObject(Constant.PROJECT_LIST, projectService.getProjectList(member));
+        modelAndView.setViewName(Page.MAIN_PROJECT_MANAGER);
+
+        return modelAndView;
     }
 
 

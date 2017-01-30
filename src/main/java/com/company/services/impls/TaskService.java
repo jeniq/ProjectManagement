@@ -21,8 +21,8 @@ public class TaskService implements SearchTask, AlterEntity<Task> {
     }
 
     @Override
-    public Task getTaskByEmpId(Long id) {
-        return null;
+    public List<Task> getTaskByEmpId(Long id) {
+        return taskDao.getTaskListByEmployeeId(id);
     }
 
     @Override

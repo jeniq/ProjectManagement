@@ -13,4 +13,6 @@ public interface TaskDao extends DmlMethod<Task>{
     //
     int getEmployeeLoadHoursById(long id, int week);
 
+    List<Task> getTaskListByEmployeeId(long id);
+
 }

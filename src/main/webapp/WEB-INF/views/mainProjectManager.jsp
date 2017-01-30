@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <title>Main</title>
     <link href = "<c:url value = "/resources/css/project_manager.css" />" rel = "stylesheet" >
     <link href = "<c:url value = "/resources/css/bootstrap.css" />" rel = "stylesheet">
     <link href = "<c:url value = "/resources/css/bootstrap-datetimepicker.min.css" />" rel = "stylesheet">
@@ -36,7 +36,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" class="logOn" data-toggle="modal" data-target="#myModal1">Project Manager</a></li>
+                <li><a href="#" class="logOn" data-toggle="modal" data-target="#myModal1">Exit</a></li>
             </ul>
         </div>
     </div>
@@ -71,8 +71,8 @@
                     <tr>
                         <th>${project.id}</th>
                         <th><a  href="#" data-toggle="modal" data-target="#myModal" >${project.title}</a></th>
-                        <th>startDate</th>
-                        <th>endDate</th>
+                        <th>${project.startDate}</th>
+                        <th>${project.endDate}</th>
                         <th>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="${project.progress}" aria-valuemin="0" aria-valuemax="100" style="width: ${project.progress}%;">
@@ -396,27 +396,6 @@
     </div>
 </div>
 
-<!-- Footer_start -->
-<div class="container-fluid">
-    <nav class="navbar navbar-inverse navbar-fixed-bottom">
-        <ul class="nav navbar-nav navbar-left">
-            <li>
-                <p class="navbar-text">Y.Hryshchenko © 2017</p>
-            </li>
-        </ul>
-    </nav>
-</div>
-<!-- Footer_end -->
-
-
-
-
-
-
-
-
-
-
 <!------------------------------------------- Modals ------------------------------------------->
 
 <!-- LOG_OUT -->
@@ -495,18 +474,18 @@
                            placeholder="1"
                            maxlength="100">
 
-                    </br>
+                    <br/>
                     <!-- sprintid -->
                     <label>Sprint</label>
-                    </br>
+                    <br/>
                     <select>
                         <option value="1">sprint1</option>
                         <option value="2">sprint2</option>
                         <option value="3">sprint13</option>
                     </select>
 
-                    </br>
-                    </br>
+                    <br/>
+                    <br/>
                     <!-- TASK_NAME -->
                     <label>Task Name</label>
                     <input type='text'
@@ -514,7 +493,7 @@
                            placeholder="Testing Module#1"
                            maxlength="30">
 
-                    </br>
+                    <br/>
                     <!-- START_DATE -->
                     <label>Start Date</label>
                     <div class="form-group">
@@ -547,11 +526,11 @@
                            class="form-control"
                            placeholder="5 hours"
                            maxlength="30">
-                    </br>
+                    <br/>
 
                     <!-- MEMBERS -->
                     <label>Members</label>
-                    </br>
+                    <br/>
                     <div class="memders">
                         <!--               <input type="checkbox">
                                         <a href="#" tabindex="0" data-toggle="popover" data-trigger="focus" data-popover-content="#status">Oleg</a>
@@ -569,10 +548,10 @@
                         </select>
                     </div>
 
-                    </br>
+                    <br/>
                     <!-- STATUS -->
                     <label>Status</label>
-                    </br>
+                    <br/>
                     <span class="label label-danger">To Do</span>
 
                 </form>
@@ -588,7 +567,7 @@
 
 <div id="status" class="hidden pop">
     <div class="popover-heading">Status&nbsp;</div>
-    <div class="popover-body">@penis<br>
+    <div class="popover-body">???<br>
         <div class="progress pr">
             <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
                 60%

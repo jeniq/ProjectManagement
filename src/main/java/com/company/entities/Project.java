@@ -1,7 +1,10 @@
 package com.company.entities;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Component
 public class Project {
     private Long id;
     private String title;

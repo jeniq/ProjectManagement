@@ -27,7 +27,6 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
     @Autowired
     private Environment env;
 
-    // Позволяет видеть все ресурсы в папке pages, такие как картинки, стили и т.п.
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/views/**").addResourceLocations("/views/");
@@ -39,8 +38,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
         registry.addInterceptor(new LoginPageInterceptor()).addPathPatterns("/");
     }
 
-    // а этот бин инициализирует View нашего проекта
-    // точно это же мы делали в mvc-dispatcher-servlet.xml
+    // Initialize project View
     @Bean
     public InternalResourceViewResolver setupViewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
@@ -55,14 +53,15 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
     public DataSource getDataSource() throws SQLException {
         PGPoolingDataSource ds = new PGPoolingDataSource();
 
-     //   ds.setUrl(env.getProperty("jdbc.postgresql.url"));
-//        ds.setUser(env.getProperty("jdbc.postgresql.username"));
-  //      ds.setPassword(env.getProperty("jdbc.postgresql.password"));
+        // remote database
+        //ds.setUrl(env.getProperty("jdbc.postgresql.url"));
+        //ds.setUser(env.getProperty("jdbc.postgresql.username"));
+        //ds.setPassword(env.getProperty("jdbc.postgresql.password"));
 
+        // local database
         ds.setUrl(env.getProperty("jdbc.postgresql_local.url"));
         ds.setUser(env.getProperty("jdbc.postgresql_local.username"));
         ds.setPassword(env.getProperty("jdbc.postgresql_local.password"));
-
 
         return ds;
     }

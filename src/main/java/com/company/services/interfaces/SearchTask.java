@@ -8,7 +8,7 @@ public interface SearchTask {
     Task getTaskById(Long id);
 
     // Searches task for employee with 'id'
-    Task getTaskByEmpId(Long id);
+    List<Task> getTaskByEmpId(Long id);
 
     // Searches task(s) for sprint with 'id'
     List<Task> getTaskListBySprint(Long id);

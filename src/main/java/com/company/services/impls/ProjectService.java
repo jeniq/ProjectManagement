@@ -4,6 +4,7 @@ import com.company.dao.interfaces.ProjectDao;
 import com.company.entities.Member;
 import com.company.entities.Project;
 import com.company.services.interfaces.AlterEntity;
+import com.company.services.interfaces.EditProject;
 import com.company.services.interfaces.SearchProject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ProjectService implements SearchProject, AlterEntity<Project>{
+public class ProjectService implements SearchProject, AlterEntity<Project>, EditProject{
 
     @Autowired
     private ProjectDao projectDao;
@@ -36,9 +37,7 @@ public class ProjectService implements SearchProject, AlterEntity<Project>{
 
     @Override
     public boolean add(Project project) {
-        int insertResult = projectDao.insert(project);
-
-        return insertResult < 1 ? false : true;
+        return false;
     }
 
     @Override
@@ -49,5 +48,11 @@ public class ProjectService implements SearchProject, AlterEntity<Project>{
     @Override
     public boolean edit(Project project) {
         return false;
+    }
+
+
+    @Override
+    public boolean create(Project project, int projectManagerId) {
+       return projectDao.create(project, projectManagerId);
     }
 }

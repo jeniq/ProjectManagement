@@ -47,6 +47,10 @@ public class JdbcMemberDao implements MemberDao {
             "\"ProjectManagement\".member m ON tex.employee_id = m.id JOIN \"ProjectManagement\".position p ON m.position = p.id JOIN " +
             "\"ProjectManagement\".access_type at ON m.access_type = at.id " +
             "WHERE task_id = :task_id";
+    private static final String SELECT_PROJECT_MANAGER = "SELECT * FROM \"ProjectManagement\".member m " +
+            "JOIN \"ProjectManagement\".position p ON m.position = p.id " +
+            "JOIN \"ProjectManagement\".access_type at ON m.access_type = at.id " +
+            "WHERE p.id = 1";
 
     private SimpleJdbcInsert insertMember;
     private NamedParameterJdbcTemplate jdbcTemplate;
@@ -128,6 +132,11 @@ public class JdbcMemberDao implements MemberDao {
 
         return jdbcTemplate.query(SELECT_EMPLOYEE_BY_TASK, params, new JdbcMemberDao.MemberRowMapper());
 
+    }
+
+    @Override
+    public List<Member> getProjectManagerList() {
+        return jdbcTemplate.query(SELECT_PROJECT_MANAGER, new MemberRowMapper());
     }
 
     private static final class MemberRowMapper implements RowMapper<Member>{

@@ -17,22 +17,26 @@ import java.util.List;
 @Component("jdbcTaskDao")
 public class JdbcTaskDao implements TaskDao {
     // Constant
-    private static String TASK = "task";
-    private static String ID = "id";
-    private static String SPRINT = "sprint";
-    private static String TASK_NAME = "title";
-    private static String DESCRIPTION = "description";
-    private static String STATUS = "is_done";
-    private static String START_DATE = "start_dt";
-    private static String ESTIMATE_TIME = "estimate_tm";
-    private static String END_DATE = "end_dt";
-    private static String WEEK = "week_no";
+    private static final String TASK = "task";
+    private static final String ID = "id";
+    private static final String SPRINT = "sprint";
+    private static final String TASK_NAME = "title";
+    private static final String DESCRIPTION = "description";
+    private static final String STATUS = "is_done";
+    private static final String START_DATE = "start_dt";
+    private static final String ESTIMATE_TIME = "estimate_tm";
+    private static final String END_DATE = "end_dt";
+    private static final String WEEK = "week_no";
+    private static final String EMPLOYEE_ID = "employee_id";
 
     // Queries
-    private static String SELECT_TASK_BY_SPRINT = "SELECT * FROM \"ProjectManagement\".task WHERE sprint = :sprint";
-    private static String SELECT_HOURS = "SELECT COUNT(estimate.tm) FROM \"ProjectManagement\".task t " +
+    private static final String SELECT_TASK_BY_SPRINT = "SELECT * FROM \"ProjectManagement\".task WHERE sprint = :sprint";
+    private static final String SELECT_HOURS = "SELECT COUNT(estimate.tm) FROM \"ProjectManagement\".task t " +
             "JOIN task_executor tex ON t.id = tex.task_id " +
             "HAVING employee_id = :id AND week_no = :week";
+    private static final String SELECT_TASK_BY_EMPLOYEE = "SELECT * FROM \"ProjectManagement\".task_executor tex JOIN " +
+            "\"ProjectManagement\".task t ON tex.task_id = t.id " +
+            "WHERE employee_id = :employee_id";
 
     private SimpleJdbcInsert insertTask;
     private NamedParameterJdbcTemplate jdbcTemplate;
@@ -92,6 +96,16 @@ public class JdbcTaskDao implements TaskDao {
         Number number =  jdbcTemplate.queryForObject(SELECT_HOURS, params, Integer.class);
 
         return (number != null ? number.intValue() : 0);
+    }
+
+    @Override
+    public List<Task> getTaskListByEmployeeId(long id) {
+        MapSqlParameterSource params = new MapSqlParameterSource();
+
+        params.addValue(EMPLOYEE_ID, id);
+
+        return jdbcTemplate.query(SELECT_TASK_BY_EMPLOYEE, params, new JdbcTaskDao.TaskRowMapper());
+
     }
 
     private static final class TaskRowMapper implements RowMapper<Task> {

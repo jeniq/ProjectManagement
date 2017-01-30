@@ -17,12 +17,12 @@ public class LoginPageInterceptor extends HandlerInterceptorAdapter {
         if (member == null || member.getAccessType() == null) {
             return true;
         } else if (member.getAccessType().getTypeName().equals(Constant.ADMINISTRATOR)) {
-            response.sendRedirect(Page.MAIN_ADMIN);
+            response.sendRedirect(Page.ADMIN);
         }else if (member.getAccessType().getTypeName().equals(Constant.CUSTOMER)){
             response.sendRedirect(Page.MAIN_CUSTOMER);
         }else if (member.getAccessType().getTypeName().equals(Constant.EMPLOYEE)){
             if (member.getPosition().getPosName().equals(Constant.PROJECT_MANAGER)){
-                response.sendRedirect(Page.MAIN_PROJECT_MANAGER);
+               request.getRequestDispatcher(Page.PROJECT_MANAGER).forward(request, response); // works with dispatcher only
             }
             response.sendRedirect(Page.MAIN_EMPLOYEE);
         }

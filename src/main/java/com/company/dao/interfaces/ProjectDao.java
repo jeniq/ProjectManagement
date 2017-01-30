@@ -8,6 +8,8 @@ import java.util.List;
  * This interface sets rules for actions with 'project' table in database.
  */
 public interface ProjectDao extends DmlMethod<Project>{
+    boolean create(Project project, int id);
+
     // Find project for user with id
     Project getProjectById(int id);
 

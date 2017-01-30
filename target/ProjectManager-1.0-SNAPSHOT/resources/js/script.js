@@ -38,6 +38,10 @@ $(function () {
     });
     $('#datetimepicker-3').datetimepicker({
         viewMode: 'days'
+    });
+    $('#datetimepicker-4, #datetimepicker-5').datetimepicker({
+        viewMode: 'days',
+        format: 'DD/MM/YYYY'
     })
 });
 
@@ -70,6 +74,14 @@ $(function(){
         });
         return false;
     });
+
+    $('.createProjectBtn').on('click', function (e) {
+        $.ajax($(e.currentTarget).attr('href')).done(function (d) {
+            $('#createProject').html(d).modal();
+        });
+        return false;
+    });
+
 });
 
 
@@ -176,7 +188,7 @@ function success(){
 
 
 function test() {
-    console.log("hyi");
+    console.log("hello");
 }
 
 

@@ -22,7 +22,7 @@ public class LoginController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView login(){
-        return new ModelAndView(Constant.LOGIN, Constant.MEMBER, new Member());
+        return new ModelAndView(Page.LOGIN, Constant.MEMBER, new Member());
     }
 
     @RequestMapping(value = "/check-member", method = RequestMethod.POST)
@@ -56,7 +56,7 @@ public class LoginController {
 
     @RequestMapping(value = "/failed", method = RequestMethod.GET)
     public ModelAndView failed(){
-        return new ModelAndView(Constant.LOGIN, Constant.MESSAGE, Constant.WRONG_AUTH_DATA);
+        return new ModelAndView(Page.LOGIN, Constant.MESSAGE, Constant.WRONG_AUTH_DATA);
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)

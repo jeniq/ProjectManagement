@@ -7,4 +7,5 @@ import java.util.List;
 public interface SearchMember {
     Member getMember(long id);
     List<Member> getMemberList();
+    List<Member> getProjectManagerList();
 }
