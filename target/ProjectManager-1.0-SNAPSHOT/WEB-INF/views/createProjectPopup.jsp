@@ -11,11 +11,13 @@
         </div>
         <form:form method="POST" commandName="project" action="addProject">
             <div class="modal-body">
+                <label>Customer</label>
                 <select name="customer">
                     <c:forEach var="customer" items="${customerList}">
                         <option value="${customer.id}">${customer.name} ${customer.surname}</option>
                     </c:forEach>
                 </select>
+                <br/>
                 <br/>
                 <label>Name</label>
                 <form:input type='text'
@@ -32,7 +34,7 @@
                         <form:input type='text'
                                     path="startDate"
                                     class="form-control"
-                                    placeholder="01/01/2017"/>
+                                    placeholder="2017/12/31"/>
                         <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -45,7 +47,7 @@
                         <form:input type='text'
                                     path="endDate"
                                     class="form-control"
-                                    placeholder="01/01/2017"/>
+                                    placeholder="2017/12/31"/>
                         <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>

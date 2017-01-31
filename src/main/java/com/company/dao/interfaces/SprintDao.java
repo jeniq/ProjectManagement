@@ -9,4 +9,5 @@ public interface SprintDao extends DmlMethod<Sprint>{
     List<Sprint> getSprintListByProjectId(long id);
     List<Sprint> getSprintListByMemberId(long id);
     Long getSprintMaxId();
+    Integer updateSprintProgress(Sprint sprint);
 }

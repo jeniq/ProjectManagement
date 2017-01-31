@@ -28,7 +28,7 @@ public class LoginPageInterceptor extends HandlerInterceptorAdapter {
                 request.getRequestDispatcher(
                         Page.PROJECT_MANAGER).forward(request, response); // works with dispatcher only
             }
-            request.getRequestDispatcher(Page.MAIN_EMPLOYEE).forward(request, response);
+            response.sendRedirect(Page.EMPLOYEE);
         }
 
         return false;

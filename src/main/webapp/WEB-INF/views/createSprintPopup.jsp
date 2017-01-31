@@ -19,6 +19,8 @@
                             maxlength="100"/>
                 <br/>
                 <div>
+                    <label>Project</label>
+                    <br/>
                     <select name="projectId">
                         <c:forEach var="project" items="${projectList}">
                             <option value="${project.id}">${project.id} ${project.title}</option>
