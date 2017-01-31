@@ -14,12 +14,12 @@
                 <div class="panel-task">
                     <div class="panel-heading task-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion-1" href="#collapseFour">
+                            <a data-toggle="collapse" data-parent="#accordion-1" href="#collapse${task.id}">
                                     ${task.title}
                             </a>
                         </h4>
                     </div>
-                    <div id="collapseFour" class="panel-collapse collapse">
+                    <div id="collapse${task.id}" class="panel-collapse collapse">
                         <div class="panel-body">
                             <table class="table">
                                 <tbody>

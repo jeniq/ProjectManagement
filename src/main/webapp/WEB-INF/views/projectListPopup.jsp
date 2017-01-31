@@ -41,6 +41,7 @@
                                 Sprint #${sprint.id}
                             </a>
                         </div>
+                        <div id="collapse${sprint.id}" class="panel-collapse collapse">
                             <div class="panel-body-sprint">
 
                                 <!-- Table -->
