@@ -20,6 +20,9 @@ public class TaskService implements SearchTask, AlterEntity<Task>, EditTask {
     @Autowired
     private SprintService sprintService;
 
+    @Autowired
+    private ProjectService projectService;
+
     @Override
     public Task getTaskById(Long id) {
         return taskDao.getTask(id);
@@ -52,10 +55,11 @@ public class TaskService implements SearchTask, AlterEntity<Task>, EditTask {
 
     @Override
     public Integer edit(Task task) {
-        if (task.getIsDone()) {
-            // update sprint progress
-            sprintService.updateProgress(task.getSprint());
-        }
+        // update sprint progress
+        sprintService.updateProgress(task.getSprint());
+
+        // update project progress
+        projectService.updateProgress(sprintService.getSprintById(task.getSprint()).getProjectId());
         return taskDao.update(task);
     }
 

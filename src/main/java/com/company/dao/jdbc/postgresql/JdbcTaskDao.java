@@ -38,7 +38,7 @@ public class JdbcTaskDao implements TaskDao {
     private static final String INSERT = "INSERT INTO \"ProjectManagement\".task (sprint, title, is_done, start_dt, end_dt, estimate_tm) " +
             "VALUES (:sprint, :title, :is_done, :start_dt, :end_dt, :estimate_tm)";
     private static final String UPDATE = "UPDATE \"ProjectManagement\".task " +
-            "SET sprint = :sprint, title = :title, is_done = :is_done, start_dt = :start_dt, end_dt = :end_dt, estimate_tm = :estimate_tm" +
+            "SET sprint = :sprint, title = :title, is_done = :is_done, start_dt = :start_dt, end_dt = :end_dt, estimate_tm = :estimate_tm " +
             "WHERE id = :id";
     private static final String INSERT_EXECUTOR = "INSERT INTO \"ProjectManagement\".task_executor VALUES (:employee_id, :task_id)";
     private static final String SELECT_TASK_BY_SPRINT = "SELECT * FROM \"ProjectManagement\".task WHERE sprint = :sprint";
