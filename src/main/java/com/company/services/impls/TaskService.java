@@ -1,9 +1,7 @@
 package com.company.services.impls;
 
-import com.company.dao.interfaces.SprintDao;
 import com.company.dao.interfaces.TaskDao;
 import com.company.entities.Member;
-import com.company.entities.Sprint;
 import com.company.entities.Task;
 import com.company.services.interfaces.AlterEntity;
 import com.company.services.interfaces.EditTask;
@@ -18,12 +16,6 @@ public class TaskService implements SearchTask, AlterEntity<Task>, EditTask {
 
     @Autowired
     private TaskDao taskDao;
-
-    @Autowired
-    private SprintDao sprintDao;
-
-    @Autowired
-    private ProjectService projectService;
 
     @Autowired
     private SprintService sprintService;
@@ -62,11 +54,7 @@ public class TaskService implements SearchTask, AlterEntity<Task>, EditTask {
     public Integer edit(Task task) {
         if (task.getIsDone()) {
             // update sprint progress
-            sprintService.updateProgress(task.getId());
-
-            // update project progress
-            projectService.updateProgress(task.getSprint());
-
+            sprintService.updateProgress(task.getSprint());
         }
         return taskDao.update(task);
     }

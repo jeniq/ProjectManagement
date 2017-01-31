@@ -53,7 +53,6 @@ public class JdbcSprintDao implements SprintDao {
 
     @Override
     public Sprint getSprintById(Long id) {
-
         MapSqlParameterSource params = new MapSqlParameterSource();
 
         params.addValue(ID, id);

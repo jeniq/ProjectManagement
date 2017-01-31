@@ -22,6 +22,9 @@ public class SprintService implements SearchSprint, AlterEntity<Sprint>, SprintI
     @Autowired
     private TaskDao taskDao;
 
+    @Autowired
+    private ProjectService projectService;
+
     @Override
     public Sprint getSprintById(Long id) {
         return sprintDao.getSprintById(id);
@@ -72,10 +75,13 @@ public class SprintService implements SearchSprint, AlterEntity<Sprint>, SprintI
     }
 
     @Override
-    public Integer updateProgress(Long taskId) {
-        Sprint sprint = getSprintById(taskId);
+    public Integer updateProgress(Long id) {
+        Sprint sprint = getSprintById(id);
         sprint.setProgress(getSprintProgress(sprint));
         sprint.setDone(sprint.getProgress().equals("100") ? true : false);
+
+        // update project progress
+        projectService.updateProgress(sprint.getProjectId());
 
         return sprintDao.updateSprintProgress(sprint);
     }

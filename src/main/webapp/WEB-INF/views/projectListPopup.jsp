@@ -37,11 +37,10 @@
                 <c:forEach var="sprint" items="${sprintList}">
                     <div class="panel panel-default" id="accordion-1">
                         <div class="panel-heading sprint-heading">
-                            <h4 class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapse${sprint.id}">
                                 Sprint #${sprint.id}
-                            </h4>
+                            </a>
                         </div>
-                        <div id="collapseOne" class="panel-collapse collapse">
                             <div class="panel-body-sprint">
 
                                 <!-- Table -->
@@ -71,13 +70,13 @@
                                     <c:forEach var="task" items="${sprint.taskList}">
                                         <div class="panel-heading task-heading">
                                             <h4 class="panel-title">
-                                                <h4 data-toggle="collapse" data-parent="#accordion-1"
-                                                    href="#collapseTwo">
+                                                <a data-toggle="collapse" data-parent="#accordion-1"
+                                                    href="#collapse${task.id}">
                                                         ${task.title}
-                                                </h4>
+                                                </a>
                                             </h4>
                                         </div>
-                                        <div id="collapseTwo" class="panel-collapse collapse">
+                                        <div id="collapse${task.id}" class="panel-collapse collapse">
                                             <div class="panel-body">
                                                 <table class="table">
                                                     <tbody>
