@@ -23,6 +23,9 @@ public class TaskService implements SearchTask, AlterEntity<Task>, EditTask {
     private SprintDao sprintDao;
 
     @Autowired
+    private ProjectService projectService;
+
+    @Autowired
     private SprintService sprintService;
 
     @Override
@@ -58,11 +61,12 @@ public class TaskService implements SearchTask, AlterEntity<Task>, EditTask {
     @Override
     public Integer edit(Task task) {
         if (task.getIsDone()){
-            Sprint sprint = sprintService.getSprintById(task.getSprint());
-            sprint.setProgress(sprintService.getSprintProgress(sprint));
-            sprint.setDone(sprint.getProgress().equals("100") ? true : false);
+            // update sprint progress
+            sprintService.updateProgress(task.getId());
 
-            sprintDao.updateSprintProgress(sprint);
+            // update project progress
+            projectService.updateProgress(task.getSprint());
+
         }
         return taskDao.update(task);
     }

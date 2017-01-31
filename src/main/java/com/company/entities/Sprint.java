@@ -36,7 +36,7 @@ public class Sprint {
         this.projectId = projectId;
     }
 
-    public long getProjectId() {
+    public Long getProjectId() {
         return projectId;
     }
 

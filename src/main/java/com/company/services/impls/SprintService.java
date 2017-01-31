@@ -5,6 +5,7 @@ import com.company.dao.interfaces.TaskDao;
 import com.company.entities.Sprint;
 import com.company.entities.Task;
 import com.company.services.interfaces.AlterEntity;
+import com.company.services.interfaces.EditSprint;
 import com.company.services.interfaces.SearchSprint;
 import com.company.services.interfaces.SprintInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class SprintService implements SearchSprint, AlterEntity<Sprint>, SprintInfo{
+public class SprintService implements SearchSprint, AlterEntity<Sprint>, SprintInfo, EditSprint{
 
     @Autowired
     private SprintDao sprintDao;
@@ -68,5 +69,14 @@ public class SprintService implements SearchSprint, AlterEntity<Sprint>, SprintI
         }
 
         return taskList.size() == 0 ? 0 : doneTask/taskList.size()*100;
+    }
+
+    @Override
+    public Integer updateProgress(Long taskId) {
+        Sprint sprint = getSprintById(taskId);
+        sprint.setProgress(getSprintProgress(sprint));
+        sprint.setDone(sprint.getProgress().equals("100") ? true : false);
+
+        return sprintDao.updateSprintProgress(sprint);
     }
 }
