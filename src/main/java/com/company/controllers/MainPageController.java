@@ -4,6 +4,7 @@ import com.company.entities.Member;
 import com.company.entities.Project;
 import com.company.services.impls.MemberService;
 import com.company.services.impls.ProjectService;
+import com.company.services.impls.SprintService;
 import com.company.services.impls.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,6 +27,8 @@ public class MainPageController {
     private ProjectService projectService;
     @Autowired
     private TaskService taskService;
+    @Autowired
+    private SprintService sprintService;
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public ModelAndView projectList(@ModelAttribute(Constant.MEMBER) Member member) {
@@ -58,7 +61,7 @@ public class MainPageController {
             return Page.REDIRECT_PROJECT_MANANGER;
         }
 
-        request.setAttribute(Constant.TASK_LIST, taskService.getTaskByEmpId(member.getId()));
+        request.setAttribute(Constant.SPRINT_LIST, sprintService.getSprintListByMember(member.getId()));
 
         return Page.MAIN_EMPLOYEE;
     }

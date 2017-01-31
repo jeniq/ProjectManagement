@@ -16,4 +16,5 @@ public interface MemberDao extends DmlMethod<Member>{
     List<Member> getEmployeeListByTask(long id);
     List<Member> getProjectManagerList();
     List<Member> getAvailableEmployeeList();
+    List<Member> getCustomerList();
 }

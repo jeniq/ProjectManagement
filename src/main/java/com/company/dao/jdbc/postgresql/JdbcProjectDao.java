@@ -28,6 +28,7 @@ public class JdbcProjectDao implements ProjectDao {
     private static String END_DATE = "end_dt";
     private static String PROJECT_ID = "project_id";
     private static String EMPLOYEE_ID = "employee_id";
+    private static String CUSTOMER_ID = "customer_id";
 
     // Queries
     private static String INSERT_PROJECT  = "INSERT INTO \"ProjectManagement\".project (title, start_dt, end_dt) VALUES (:title, :start_dt, :end_dt)";
@@ -43,6 +44,7 @@ public class JdbcProjectDao implements ProjectDao {
     "JOIN \"ProjectManagement\".project p ON s.project = p.id " +
     "WHERE employee_id = :id";
     private static String SELECT_ALL  = "SELECT * FROM \"ProjectManagement\".project";
+    private static String INSERT_CUSTOMER = "INSERT INTO \"ProjectManagement\".project_customer VALUES (:project_id, :customer_id)";
 
     private SimpleJdbcInsert insertProject;
     private NamedParameterJdbcTemplate jdbcTemplate;
@@ -80,7 +82,7 @@ public class JdbcProjectDao implements ProjectDao {
 
     @Override
     @Transactional
-    public boolean create(Project project, int id) {
+    public boolean create(Project project, int id, Long customer) {
         KeyHolder keyHolder = new GeneratedKeyHolder();
         MapSqlParameterSource params = new MapSqlParameterSource();
 
@@ -95,6 +97,10 @@ public class JdbcProjectDao implements ProjectDao {
         params.addValue(EMPLOYEE_ID, id);
 
         jdbcTemplate.update(INSERT_PROJECT_MANAGER, params);
+
+        params.addValue(CUSTOMER_ID, customer);
+
+        jdbcTemplate.update(INSERT_CUSTOMER,params);
 
         return true;
     }

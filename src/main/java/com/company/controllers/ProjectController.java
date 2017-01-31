@@ -42,7 +42,9 @@ public class ProjectController {
     public ModelAndView newProject() {
         ModelAndView modelAndView = new ModelAndView();
         List<Member> projectManagerList = memberService.getProjectManagerList();
+        List<Member> customerList = memberService.getCustomerList();
 
+        modelAndView.addObject(Constant.CUSTOMER_LIST, customerList);
         modelAndView.addObject(Constant.PROJECT_MANAGER_LIST, projectManagerList);
         modelAndView.addObject(Constant.PROJECT, new Project());
 
@@ -54,7 +56,8 @@ public class ProjectController {
     @RequestMapping(value = "/addProject", method = RequestMethod.POST)
     public String addProject(@ModelAttribute(Constant.PROJECT) Project project, HttpServletRequest request) {
         Integer projectManagerId = Integer.parseInt(request.getParameter(Constant.PROJECT_MANAGER));
-        projectService.create(project, projectManagerId);
+        Long customerId = Long.parseLong(request.getParameter(Constant.CUSTOMER.toLowerCase()));
+        projectService.create(project, projectManagerId, customerId);
 
         return Page.REDIRECT_ADMINISTRATOR;
     }

@@ -50,9 +50,8 @@ public class ProjectService implements SearchProject, AlterEntity<Project>, Edit
         return false;
     }
 
-
     @Override
-    public boolean create(Project project, int projectManagerId) {
-       return projectDao.create(project, projectManagerId);
+    public boolean create(Project project, int projectManagerId, Long customerId) {
+       return projectDao.create(project, projectManagerId, customerId);
     }
 }
