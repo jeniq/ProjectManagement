@@ -26,15 +26,15 @@ public class JdbcSprintDao implements SprintDao {
     // Queries
     private static final String INSERT = "INSERT INTO \"ProjectManagement\".sprint (id, project) VALUES (:id, :project)";
     private static final String SELECT_SPRINT_BY_PROJECT = "SELECT * FROM \"ProjectManagement\".sprint WHERE project = :project_id";
-    private static final String SELECT_SPRINT_BY_MEMBER = "SELECT s.id, s.is_done, project FROM \"ProjectManagement\".sprint s " +
+    private static final String SELECT_SPRINT_BY_MEMBER = "SELECT s.id, s.is_done, s.project, s.progress FROM \"ProjectManagement\".sprint s " +
     "JOIN \"ProjectManagement\".task t ON s.id = t.sprint " +
     "JOIN \"ProjectManagement\".task_executor tex ON t.id = tex.task_id " +
     "WHERE employee_id = :id " +
     "UNION " +
-    "SELECT s.id, s.is_done, project FROM \"ProjectManagement\".project p JOIN \"ProjectManagement\".sprint s ON p.id = s.project " +
+    "SELECT s.id, s.is_done, s.project, s.progress FROM \"ProjectManagement\".project p JOIN \"ProjectManagement\".sprint s ON p.id = s.project " +
     "JOIN \"ProjectManagement\".project_manager pm ON p.id = pm.project_id WHERE employee_id = :id";
     private static final String SELECT_SPRINT_MAX_ID = "SELECT last_value FROM \"ProjectManagement\".sprint_id_seq";
-    private static final String UPDATE_PROGRESS = "UPDATE \"ProjectManagement\".sprint SET progress = :progress";
+    private static final String UPDATE_PROGRESS = "UPDATE \"ProjectManagement\".sprint SET progress = :progress, is_done = :is_done";
     private static final String SELECT_SPRINT = "SELECT * FROM \"ProjectManagement\".sprint WHERE id = :id";
 
 
@@ -47,7 +47,7 @@ public class JdbcSprintDao implements SprintDao {
 
 
     @Override
-    public Sprint getSprintById(long id) {
+    public Sprint getSprintById(Long id) {
 
         MapSqlParameterSource params = new MapSqlParameterSource();
 
@@ -57,7 +57,7 @@ public class JdbcSprintDao implements SprintDao {
     }
 
     @Override
-    public List<Sprint> getSprintListByProjectId(long id) {
+    public List<Sprint> getSprintListByProjectId(Long id) {
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue(PROJECT_ID, id);
 
@@ -65,7 +65,7 @@ public class JdbcSprintDao implements SprintDao {
     }
 
     @Override
-    public List<Sprint> getSprintListByMemberId(long id) {
+    public List<Sprint> getSprintListByMemberId(Long id) {
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue(ID, id);
 
@@ -84,12 +84,13 @@ public class JdbcSprintDao implements SprintDao {
         MapSqlParameterSource params = new MapSqlParameterSource();
 
         params.addValue(PROGRESS, sprint.getProgress());
+        params.addValue(STATUS, sprint.getDone());
 
         return jdbcTemplate.update(UPDATE_PROGRESS, params);
     }
 
     @Override
-    public int insert(Sprint sprint) {
+    public Integer insert(Sprint sprint) {
 
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue(ID, sprint.getId());
@@ -100,12 +101,12 @@ public class JdbcSprintDao implements SprintDao {
     }
 
     @Override
-    public int delete(Sprint sprint) {
+    public Integer delete(Sprint sprint) {
         return 0;
     }
 
     @Override
-    public int update(Sprint sprint) {
+    public Integer update(Sprint sprint) {
         return 0;
     }
 
@@ -118,6 +119,7 @@ public class JdbcSprintDao implements SprintDao {
             sprint.setId(rs.getLong(ID));
             sprint.setDone(rs.getBoolean(STATUS));
             sprint.setProjectId(rs.getLong(PROJECT));
+            sprint.setProgress(rs.getInt(PROGRESS));
 
             return sprint;
         }

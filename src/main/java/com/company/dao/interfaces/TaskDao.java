@@ -11,12 +11,12 @@ public interface TaskDao extends DmlMethod<Task>{
     Task getTask(long id);
 
     // Get task list for sprint with 'id'
-    List<Task> getTaskListBySprintId(long id);
+    List<Task> getTaskListBySprintId(Long id);
 
     //
-    int getEmployeeLoadHoursById(long id, int week);
+    int getEmployeeLoadHoursById(Long id, Integer week);
 
-    List<Task> getTaskListByEmployeeId(long id);
+    List<Task> getTaskListByEmployeeId(Long id);
 
     Long getTaskMaxId();
 

@@ -34,22 +34,22 @@ public class JdbcPositionDao implements PositionDao {
     }
 
     @Override
-    public int insert(Position position) {
+    public Integer insert(Position position) {
         return 0;
     }
 
     @Override
-    public int delete(Position position) {
+    public Integer delete(Position position) {
         return 0;
     }
 
     @Override
-    public int update(Position position) {
+    public Integer update(Position position) {
         return 0;
     }
 
     @Override
-    public Position getPositionById(int id) {
+    public Position getPositionById(Integer id) {
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue(ID, id);
         return jdbcTemplate.queryForObject(SELECT_BY_ID, params, new PositionRowMapper());

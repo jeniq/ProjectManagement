@@ -5,5 +5,5 @@ import com.company.entities.Member;
 import java.util.List;
 
 public interface SearchExecutor {
-    List<Member> getEmployeeListForTask(long id);
+    List<Member> getEmployeeListForTask(Long id);
 }

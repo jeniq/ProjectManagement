@@ -20,7 +20,7 @@ public class MemberService implements SearchMember, Load, SearchExecutor, AlterE
     private MemberDao memberDao;
 
     @Override
-    public Member getMember(long id) {
+    public Member getMember(Long id) {
         return memberDao.getMemberById(id);
     }
 
@@ -64,7 +64,7 @@ public class MemberService implements SearchMember, Load, SearchExecutor, AlterE
     }
 
     @Override
-    public List<Member> getEmployeeListForTask(long id) {
+    public List<Member> getEmployeeListForTask(Long id) {
         return memberDao.getEmployeeListByTask(id);
     }
 

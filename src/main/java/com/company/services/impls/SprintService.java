@@ -22,17 +22,17 @@ public class SprintService implements SearchSprint, AlterEntity<Sprint>, SprintI
     private TaskDao taskDao;
 
     @Override
-    public Sprint getSprintById(long id) {
+    public Sprint getSprintById(Long id) {
         return sprintDao.getSprintById(id);
     }
 
     @Override
-    public List<Sprint> getSprintList(long id) {
+    public List<Sprint> getSprintList(Long id) {
         return sprintDao.getSprintListByProjectId(id);
     }
 
     @Override
-    public List<Sprint> getSprintListByMember(long id) {
+    public List<Sprint> getSprintListByMember(Long id) {
         return sprintDao.getSprintListByMemberId(id);
     }
 

@@ -60,6 +60,8 @@ public class TaskService implements SearchTask, AlterEntity<Task>, EditTask {
         if (task.getIsDone()){
             Sprint sprint = sprintService.getSprintById(task.getSprint());
             sprint.setProgress(sprintService.getSprintProgress(sprint));
+            sprint.setDone(sprint.getProgress().equals("100") ? true : false);
+
             sprintDao.updateSprintProgress(sprint);
         }
         return taskDao.update(task);

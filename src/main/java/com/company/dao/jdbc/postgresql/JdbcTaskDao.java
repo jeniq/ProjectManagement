@@ -61,17 +61,17 @@ public class JdbcTaskDao implements TaskDao {
 
 
     @Override
-    public int insert(Task task) {
+    public Integer insert(Task task) {
         return 0;
     }
 
     @Override
-    public int delete(Task task) {
+    public Integer delete(Task task) {
         return 0;
     }
 
     @Override
-    public int update(Task task) {
+    public Integer update(Task task) {
         MapSqlParameterSource params = new MapSqlParameterSource();
 
         params.addValue(SPRINT, task.getSprint());
@@ -119,7 +119,7 @@ public class JdbcTaskDao implements TaskDao {
     }
 
     @Override
-    public List<Task> getTaskListBySprintId(long id) {
+    public List<Task> getTaskListBySprintId(Long id) {
         MapSqlParameterSource params = new MapSqlParameterSource();
 
         params.addValue(SPRINT, id);
@@ -128,7 +128,7 @@ public class JdbcTaskDao implements TaskDao {
     }
 
     @Override
-    public int getEmployeeLoadHoursById(long id, int week) {
+    public int getEmployeeLoadHoursById(Long id, Integer week) {
         MapSqlParameterSource params = new MapSqlParameterSource();
 
         params.addValue(ID, id);
@@ -139,7 +139,7 @@ public class JdbcTaskDao implements TaskDao {
     }
 
     @Override
-    public List<Task> getTaskListByEmployeeId(long id) {
+    public List<Task> getTaskListByEmployeeId(Long id) {
         MapSqlParameterSource params = new MapSqlParameterSource();
 
         params.addValue(EMPLOYEE_ID, id);

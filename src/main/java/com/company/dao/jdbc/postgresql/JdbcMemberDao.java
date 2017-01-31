@@ -70,7 +70,7 @@ public class JdbcMemberDao implements MemberDao {
     }
 
     @Override
-    public int insert(Member member) {
+    public Integer insert(Member member) {
         MapSqlParameterSource params = new MapSqlParameterSource();
 
         params.addValue(NAME, member.getName());
@@ -84,12 +84,12 @@ public class JdbcMemberDao implements MemberDao {
     }
 
     @Override
-    public int delete(Member member) {
+    public Integer delete(Member member) {
         return 0;
     }
 
     @Override
-    public int update(Member member) {
+    public Integer update(Member member) {
 
         return 0;
     }
@@ -127,7 +127,7 @@ public class JdbcMemberDao implements MemberDao {
     }
 
     @Override
-    public List<Member> getEmployeeListByTask(long id) {
+    public List<Member> getEmployeeListByTask(Long id) {
         MapSqlParameterSource params = new MapSqlParameterSource();
 
         params.addValue(TASK_ID, id);

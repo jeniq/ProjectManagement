@@ -54,25 +54,25 @@ public class JdbcProjectDao implements ProjectDao {
     }
 
     @Override
-    public int insert(Project project) {
+    public Integer insert(Project project) {
         return 0;
     }
 
     @Override
-    public int delete(Project project) {
+    public Integer delete(Project project) {
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue(ID, project.getId());
         return jdbcTemplate.update(DELETE, params);
     }
 
     @Override
-    public int update(Project project) {
+    public Integer update(Project project) {
         return 0;
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public boolean create(Project project, int id, Long customer) {
+    public boolean create(Project project, Integer id, Long customer) {
         KeyHolder keyHolder = new GeneratedKeyHolder();
         MapSqlParameterSource params = new MapSqlParameterSource();
 
@@ -96,7 +96,7 @@ public class JdbcProjectDao implements ProjectDao {
     }
 
     @Override
-    public Project getProjectById(int id) {
+    public Project getProjectById(Integer id) {
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue(ID, id);
         return jdbcTemplate.queryForObject(SELECT_BY_ID, params, new ProjectRowMapper());
@@ -108,7 +108,7 @@ public class JdbcProjectDao implements ProjectDao {
     }
 
     @Override
-    public List<Project> getProjectList(long id) {
+    public List<Project> getProjectList(Long id) {
         MapSqlParameterSource params = new MapSqlParameterSource();
 
         params.addValue(ID, id);
