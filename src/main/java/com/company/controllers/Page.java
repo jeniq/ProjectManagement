@@ -27,5 +27,6 @@ public final class Page {
     public static final String ERROR = "error";
     public static final String CREATE_MEMBER_POPUP = "createMemberPopup";
     public static final String EMPLOYEE = "employee";
+    public static final String CUSTOMER = "customer";
 
 }

@@ -22,7 +22,7 @@ public class LoginPageInterceptor extends HandlerInterceptorAdapter {
         } else if (member.getAccessType().getTypeName().equals(Constant.ADMINISTRATOR)) {
             response.sendRedirect(Page.ADMIN);
         } else if (member.getAccessType().getTypeName().equals(Constant.CUSTOMER)) {
-            response.sendRedirect(Page.MAIN_CUSTOMER);
+            response.sendRedirect(Page.CUSTOMER);
         } else if (member.getAccessType().getTypeName().equals(Constant.EMPLOYEE)) {
             if (member.getPosition().getPosName().equals(Constant.PROJECT_MANAGER)) {
                 request.getRequestDispatcher(
