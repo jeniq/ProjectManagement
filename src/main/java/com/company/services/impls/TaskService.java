@@ -1,7 +1,9 @@
 package com.company.services.impls;
 
+import com.company.dao.interfaces.SprintDao;
 import com.company.dao.interfaces.TaskDao;
 import com.company.entities.Member;
+import com.company.entities.Sprint;
 import com.company.entities.Task;
 import com.company.services.interfaces.AlterEntity;
 import com.company.services.interfaces.EditTask;
@@ -17,9 +19,15 @@ public class TaskService implements SearchTask, AlterEntity<Task>, EditTask {
     @Autowired
     private TaskDao taskDao;
 
+    @Autowired
+    private SprintDao sprintDao;
+
+    @Autowired
+    private SprintService sprintService;
+
     @Override
     public Task getTaskById(Long id) {
-        return null;
+        return taskDao.getTask(id);
     }
 
     @Override
@@ -38,10 +46,8 @@ public class TaskService implements SearchTask, AlterEntity<Task>, EditTask {
     }
 
     @Override
-    public boolean add(Task task) {
-        int insertResult = taskDao.insert(task);
-
-        return insertResult < 1 ? false : true;
+    public Integer add(Task task) {
+        return taskDao.insert(task);
     }
 
     @Override
@@ -50,13 +56,20 @@ public class TaskService implements SearchTask, AlterEntity<Task>, EditTask {
     }
 
     @Override
-    public boolean edit(Task task) {
-        return false;
+    public Integer edit(Task task) {
+        if (task.getIsDone()){
+            Sprint sprint = sprintService.getSprintById(task.getSprint());
+            sprint.setProgress(sprintService.getSprintProgress(sprint));
+            sprintDao.updateSprintProgress(sprint);
+        }
+        return taskDao.update(task);
     }
 
     @Override
-    //@Transactional(propagation = Propagation.REQUIRED)
     public boolean create(Task task, Member executor) {
+        if (!task.getStartDate().before(task.getEndDate())){ // check date order
+            return false;
+        }
         return taskDao.create(task, executor);
     }
 }

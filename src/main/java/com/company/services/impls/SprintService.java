@@ -23,7 +23,7 @@ public class SprintService implements SearchSprint, AlterEntity<Sprint>, SprintI
 
     @Override
     public Sprint getSprintById(long id) {
-        return null;
+        return sprintDao.getSprintById(id);
     }
 
     @Override
@@ -42,10 +42,8 @@ public class SprintService implements SearchSprint, AlterEntity<Sprint>, SprintI
     }
 
     @Override
-    public boolean add(Sprint sprint) {
-        int insertResult = sprintDao.insert(sprint);
-
-        return insertResult < 1 ? false : true;
+    public Integer add(Sprint sprint) {
+        return sprintDao.insert(sprint);
     }
 
     @Override
@@ -54,8 +52,8 @@ public class SprintService implements SearchSprint, AlterEntity<Sprint>, SprintI
     }
 
     @Override
-    public boolean edit(Sprint sprint) {
-        return false;
+    public Integer edit(Sprint sprint) {
+        return 0;
     }
 
     @Override

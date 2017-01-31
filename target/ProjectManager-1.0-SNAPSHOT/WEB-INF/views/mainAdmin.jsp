@@ -139,9 +139,10 @@
                     </tbody>
                 </table>
             </div>
-            <%--<button class="btn btn-primary" data-toggle="modal" data-target="#createProject">Create new project</button>--%>
             <a href="/newProject" class="btn btn-primary createProjectBtn" data-target="#createProject">Create new
                 project</a>
+            <a href="/newMember" class="btn btn-primary createMemberBtn" data-target="#createMember">Create new
+                member</a>
         </div>
     </section>
 </section>
@@ -153,6 +154,11 @@
 </div>
 
 <div class="modal fade" id="createProject" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
+     aria-hidden="true">
+
+</div>
+
+<div class="modal fade" id="createMember" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
      aria-hidden="true">
 
 </div>

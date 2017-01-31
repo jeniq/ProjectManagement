@@ -2,6 +2,7 @@ package com.company.services.impls;
 
 import com.company.dao.interfaces.MemberDao;
 import com.company.entities.Member;
+import com.company.services.interfaces.AlterEntity;
 import com.company.services.interfaces.Load;
 import com.company.services.interfaces.SearchExecutor;
 import com.company.services.interfaces.SearchMember;
@@ -13,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-public class MemberService implements SearchMember, Load, SearchExecutor {
+public class MemberService implements SearchMember, Load, SearchExecutor, AlterEntity<Member> {
 
     @Autowired
     private MemberDao memberDao;
@@ -65,5 +66,20 @@ public class MemberService implements SearchMember, Load, SearchExecutor {
     @Override
     public List<Member> getEmployeeListForTask(long id) {
         return memberDao.getEmployeeListByTask(id);
+    }
+
+    @Override
+    public Integer add(Member member) {
+        return memberDao.insert(member);
+    }
+
+    @Override
+    public Integer remove(Member member) {
+        return null;
+    }
+
+    @Override
+    public Integer edit(Member member) {
+        return 0;
     }
 }

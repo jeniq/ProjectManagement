@@ -68,14 +68,15 @@
                     <tbody>
                     <c:forEach var="sprint" items="${sprintList}">
                         <tr>
-                            <th><a href="/sprint${sprint.id}" data-toggle="modal" data-target="#myModal"
+                            <th><a href="/sprint${sprint.id}" data-toggle="modal" data-target="#myModal #sprintDetails"
                                    class="details">${sprint.id}</a></th>
                             <th>
                                 <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="${task.progress}"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: ${task.progress}%;">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="${sprint.progress}"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: ${sprint.progress}%;">
                                             ${sprint.progress}%
                                     </div>
+                                </div>
                             </th>
                         </tr>
                     </c:forEach>

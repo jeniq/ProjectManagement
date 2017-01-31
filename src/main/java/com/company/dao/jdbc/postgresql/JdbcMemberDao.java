@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
@@ -33,6 +32,8 @@ public class JdbcMemberDao implements MemberDao {
     private static final String EMPLOYEE = "task_id";
 
     // Queries
+    private static final String INSERT = "INSERT INTO \"ProjectManagement\".member (name, surname, email, access_type, position, password)" +
+            "VALUES (:name, :surname, :email, :access_type, :position, :password)";
     private static final String DELETE = "DELETE FROM \"ProjectManagement\".member WHERE id = :id";
     private static final String UPDATE = "UPDATE \"ProjectManagement\".member SET name = :name, surname = :surname, " +
             "email = :email, access_type = :type, position = :position, password = :password" +
@@ -61,20 +62,11 @@ public class JdbcMemberDao implements MemberDao {
             "JOIN \"ProjectManagement\".position p ON m.position = p.id\n" +
             "WHERE m.access_type = 3";
 
-    private SimpleJdbcInsert insertMember;
     private NamedParameterJdbcTemplate jdbcTemplate;
 
     @Autowired
     public void setDataSource(DataSource dataSource){
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
-        this.insertMember = new SimpleJdbcInsert(dataSource).withTableName(MEMBER).usingColumns(
-                NAME,
-                SURNAME,
-                EMAIL,
-                ACCESS_TYPE,
-                POSITION,
-                PASSWORD
-        );
     }
 
     @Override
@@ -84,16 +76,15 @@ public class JdbcMemberDao implements MemberDao {
         params.addValue(NAME, member.getName());
         params.addValue(SURNAME, member.getSurname());
         params.addValue(EMAIL, member.getEmail());
-        params.addValue(ACCESS_TYPE, member.getAccessType());
-        params.addValue(POSITION, member.getPosition());
+        params.addValue(POSITION, member.getPosition().getId());
+        params.addValue(ACCESS_TYPE, member.getAccessType().getId());
         params.addValue(PASSWORD, member.getPassword());
 
-        return insertMember.execute(params);
+        return jdbcTemplate.update(INSERT, params);
     }
 
     @Override
     public int delete(Member member) {
-
         return 0;
     }
 

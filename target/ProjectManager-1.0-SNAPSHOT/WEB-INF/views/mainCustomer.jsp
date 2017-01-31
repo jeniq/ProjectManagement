@@ -71,10 +71,10 @@
                     <tbody>
                     <c:forEach var="project" items="${projectList}">
                         <tr>
-                            <th>project.id</th>
-                            <th><a href="#" data-toggle="modal" data-target="#myModal">project.title</a></th>
-                            <th>project.startDate</th>
-                            <th>project.endDate</th>
+                            <th>${project.id}</th>
+                            <th>${project.title}</th>
+                            <th>${project.startDate}</th>
+                            <th>${project.endDate}</th>
                             <th>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="${project.progress}"
@@ -95,46 +95,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Project Name</h4>
-            </div>
-            <div class="modal-body">
-                <div class="panel panel-default">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Start Date</th>
-                            <th>End Date</th>
-                            <th>Progress</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <th>1</th>
-                            <th>09.19.16</th>
-                            <th>10.10.16</th>
-                            <th>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                                         aria-valuemax="100" style="width: 60%;">
-                                        60%
-                                    </div>
-                                </div>
-                            </th>
-                        </tr>
-                    </table>
-                </div>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
 </div>
 
 

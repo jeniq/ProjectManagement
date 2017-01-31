@@ -7,7 +7,7 @@ public class Position {
     private Long id;
     private String posName;
 
-    Position() {
+    public Position() {
     }
 
     public Position(Long id, String posName) {
@@ -15,7 +15,11 @@ public class Position {
         this.posName = posName;
     }
 
-    public Position(Long id) {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -23,4 +27,7 @@ public class Position {
         return posName;
     }
 
+    public void setPosName(String posName) {
+        this.posName = posName;
+    }
 }

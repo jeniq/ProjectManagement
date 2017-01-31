@@ -36,8 +36,8 @@ public class ProjectService implements SearchProject, AlterEntity<Project>, Edit
     }
 
     @Override
-    public boolean add(Project project) {
-        return false;
+    public Integer add(Project project) {
+        return 0;
     }
 
     @Override
@@ -46,12 +46,15 @@ public class ProjectService implements SearchProject, AlterEntity<Project>, Edit
     }
 
     @Override
-    public boolean edit(Project project) {
-        return false;
+    public Integer edit(Project project) {
+        return 0;
     }
 
     @Override
     public boolean create(Project project, int projectManagerId, Long customerId) {
+        if (!project.getStartDate().before(project.getEndDate())){ // check date order
+            return false;
+        }
        return projectDao.create(project, projectManagerId, customerId);
     }
 }

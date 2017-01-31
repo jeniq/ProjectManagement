@@ -11,15 +11,17 @@ import org.springframework.stereotype.Component;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 @Component("jdbcAccessTypeDao")
 public class JdbcAccessTypeDao implements AccessTypeDao {
     // Constant
     private static String ID = "id";
-    private static String TYPE_NAME = "type_name";
+    private static String TYPE_NAME = "access_name";
 
     // Queries
     private static String SELECT_BY_ID = "SELECT * FROM \"ProjectManagement\".access_type WHERE id = :id";
+    private static String SELECT_ALL = "SELECT * FROM \"ProjectManagement\".access_type";
 
     private NamedParameterJdbcTemplate jdbcTemplate;
 
@@ -29,11 +31,16 @@ public class JdbcAccessTypeDao implements AccessTypeDao {
     }
 
     @Override
-    public AccessType getAccessTypeById(long id) {
+    public AccessType getAccessTypeById(Integer id) {
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue(ID, id);
 
         return jdbcTemplate.queryForObject(SELECT_BY_ID, params, new AccessTypeRowMapper());
+    }
+
+    @Override
+    public List<AccessType> getAccessTypeList() {
+        return jdbcTemplate.query(SELECT_ALL, new AccessTypeRowMapper());
     }
 
     private static final class AccessTypeRowMapper implements RowMapper<AccessType> {
