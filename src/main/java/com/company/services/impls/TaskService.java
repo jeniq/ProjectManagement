@@ -60,7 +60,7 @@ public class TaskService implements SearchTask, AlterEntity<Task>, EditTask {
 
     @Override
     public Integer edit(Task task) {
-        if (task.getIsDone()){
+        if (task.getIsDone()) {
             // update sprint progress
             sprintService.updateProgress(task.getId());
 
@@ -73,7 +73,7 @@ public class TaskService implements SearchTask, AlterEntity<Task>, EditTask {
 
     @Override
     public boolean create(Task task, Member executor) {
-        if (!task.getStartDate().before(task.getEndDate())){ // check date order
+        if (!task.getStartDate().before(task.getEndDate())) { // check date order
             return false;
         }
         return taskDao.create(task, executor);

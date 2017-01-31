@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ProjectService implements SearchProject, AlterEntity<Project>, EditProject, ProjectInfo{
+public class ProjectService implements SearchProject, AlterEntity<Project>, EditProject, ProjectInfo {
 
     @Autowired
     private ProjectDao projectDao;
@@ -30,7 +30,8 @@ public class ProjectService implements SearchProject, AlterEntity<Project>, Edit
 
     @Override
     public List<Project> getProjectList(Member member) {
-        if (member.getAccessType().getTypeName().equals("Administrator")){return projectDao.getProjectList();
+        if (member.getAccessType().getTypeName().equals("Administrator")) {
+            return projectDao.getProjectList();
         }
 
         return projectDao.getProjectList(member.getId());
@@ -58,10 +59,10 @@ public class ProjectService implements SearchProject, AlterEntity<Project>, Edit
 
     @Override
     public boolean create(Project project, Integer projectManagerId, Long customerId) {
-        if (!project.getStartDate().before(project.getEndDate())){ // check date order
+        if (!project.getStartDate().before(project.getEndDate())) { // check date order
             return false;
         }
-       return projectDao.create(project, projectManagerId, customerId);
+        return projectDao.create(project, projectManagerId, customerId);
     }
 
     @Override
@@ -77,7 +78,7 @@ public class ProjectService implements SearchProject, AlterEntity<Project>, Edit
         int sprintProgress = 0;
         List<Sprint> sprintList = sprintDao.getSprintListByProjectId(project.getId());
 
-        for (Sprint s : sprintList){
+        for (Sprint s : sprintList) {
             sprintProgress += s.getProgress();
         }
 

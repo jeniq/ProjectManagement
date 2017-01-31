@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class AccessTypeService implements SearchAccessType{
+public class AccessTypeService implements SearchAccessType {
     @Autowired
     private AccessTypeDao accessTypeDao;
 

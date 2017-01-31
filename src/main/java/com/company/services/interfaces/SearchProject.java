@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface SearchProject {
     Project getProjectById(Long id);
+
     List<Project> getProjectList(Member member);
+
     Project details(Long id);
 }

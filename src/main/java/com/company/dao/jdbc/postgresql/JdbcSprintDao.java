@@ -25,16 +25,20 @@ public class JdbcSprintDao implements SprintDao {
 
     // Queries
     private static final String INSERT = "INSERT INTO \"ProjectManagement\".sprint (id, project) VALUES (:id, :project)";
-    private static final String SELECT_SPRINT_BY_PROJECT = "SELECT * FROM \"ProjectManagement\".sprint WHERE project = :project_id";
-    private static final String SELECT_SPRINT_BY_MEMBER = "SELECT s.id, s.is_done, s.project, s.progress FROM \"ProjectManagement\".sprint s " +
-    "JOIN \"ProjectManagement\".task t ON s.id = t.sprint " +
-    "JOIN \"ProjectManagement\".task_executor tex ON t.id = tex.task_id " +
-    "WHERE employee_id = :id " +
-    "UNION " +
-    "SELECT s.id, s.is_done, s.project, s.progress FROM \"ProjectManagement\".project p JOIN \"ProjectManagement\".sprint s ON p.id = s.project " +
-    "JOIN \"ProjectManagement\".project_manager pm ON p.id = pm.project_id WHERE employee_id = :id";
+    private static final String SELECT_SPRINT_BY_PROJECT = "SELECT * FROM \"ProjectManagement\".sprint " +
+            "WHERE project = :project_id";
+    private static final String SELECT_SPRINT_BY_MEMBER = "SELECT s.id, s.is_done, s.project, s.progress " +
+            "FROM \"ProjectManagement\".sprint s " +
+            "JOIN \"ProjectManagement\".task t ON s.id = t.sprint " +
+            "JOIN \"ProjectManagement\".task_executor tex ON t.id = tex.task_id " +
+            "WHERE employee_id = :id " +
+            "UNION " +
+            "SELECT s.id, s.is_done, s.project, s.progress " +
+            "FROM \"ProjectManagement\".project p JOIN \"ProjectManagement\".sprint s ON p.id = s.project " +
+            "JOIN \"ProjectManagement\".project_manager pm ON p.id = pm.project_id WHERE employee_id = :id";
     private static final String SELECT_SPRINT_MAX_ID = "SELECT last_value FROM \"ProjectManagement\".sprint_id_seq";
-    private static final String UPDATE_PROGRESS = "UPDATE \"ProjectManagement\".sprint SET progress = :progress, is_done = :is_done " +
+    private static final String UPDATE_PROGRESS = "UPDATE \"ProjectManagement\".sprint " +
+            "SET progress = :progress, is_done = :is_done " +
             "WHERE id = :id";
     private static final String SELECT_SPRINT = "SELECT * FROM \"ProjectManagement\".sprint WHERE id = :id";
 
@@ -42,7 +46,7 @@ public class JdbcSprintDao implements SprintDao {
     private NamedParameterJdbcTemplate jdbcTemplate;
 
     @Autowired
-    public void setDataSource(DataSource dataSource){
+    public void setDataSource(DataSource dataSource) {
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
     }
 

@@ -5,7 +5,7 @@ import com.company.entities.Task;
 
 import java.util.List;
 
-public interface TaskDao extends DmlMethod<Task>{
+public interface TaskDao extends DmlMethod<Task> {
     boolean create(Task task, Member member);
 
     Task getTask(long id);

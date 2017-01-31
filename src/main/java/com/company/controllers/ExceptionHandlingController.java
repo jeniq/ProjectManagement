@@ -16,17 +16,17 @@ import java.sql.SQLException;
 public class ExceptionHandlingController {
 
     @ExceptionHandler(SQLException.class)
-    public ModelAndView handleSqlError(){
+    public ModelAndView handleSqlError() {
         return new ModelAndView(Page.ERROR, Constant.MESSAGE, Constant.SQL_ERROR);
     }
 
     @ExceptionHandler(NoHandlerFoundException.class)
-    public ModelAndView handleError404(){
+    public ModelAndView handleError404() {
         return new ModelAndView(Page.ERROR, Constant.MESSAGE, Constant.NOT_FOUND);
     }
 
     @ExceptionHandler(Exception.class)
-    public ModelAndView handleException(){
+    public ModelAndView handleException() {
         return new ModelAndView(Page.ERROR, Constant.MESSAGE, Constant.EXCEPTION);
     }
 }

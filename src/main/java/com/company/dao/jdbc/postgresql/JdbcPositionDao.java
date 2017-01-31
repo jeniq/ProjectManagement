@@ -29,7 +29,7 @@ public class JdbcPositionDao implements PositionDao {
     private NamedParameterJdbcTemplate jdbcTemplate;
 
     @Autowired
-    public void setDataSource(DataSource dataSource){
+    public void setDataSource(DataSource dataSource) {
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
     }
 

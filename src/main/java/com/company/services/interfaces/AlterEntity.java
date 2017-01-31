@@ -5,6 +5,8 @@ package com.company.services.interfaces;
  */
 public interface AlterEntity<E> {
     Integer add(E e);
+
     Integer remove(E e);
+
     Integer edit(E e);
 }

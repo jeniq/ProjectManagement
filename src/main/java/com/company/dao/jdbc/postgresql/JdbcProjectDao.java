@@ -32,26 +32,35 @@ public class JdbcProjectDao implements ProjectDao {
     private static final String PROGRESS = "progress";
 
     // Queries
-    private static final String INSERT_PROJECT  = "INSERT INTO \"ProjectManagement\".project (title, start_dt, end_dt) VALUES (:title, :start_dt, :end_dt)";
-    private static final String INSERT_PROJECT_MANAGER  = "INSERT INTO \"ProjectManagement\".project_manager VALUES (:project_id, :employee_id)";
-    private static final String DELETE  = "DELETE FROM \"ProjectManagement\".project WHERE id = :id";
-    private static final String UPDATE  = "UPDATE \"ProjectManagement\".project SET title = :title, start_dt = :start_dt, end_dt = :end_dt, progress = :progress " +
+    private static final String INSERT_PROJECT = "INSERT INTO \"ProjectManagement\".project (title, start_dt, end_dt) " +
+            "VALUES (:title, :start_dt, :end_dt)";
+    private static final String INSERT_PROJECT_MANAGER = "INSERT INTO \"ProjectManagement\".project_manager " +
+            "VALUES (:project_id, :employee_id)";
+    private static final String DELETE = "DELETE FROM \"ProjectManagement\".project WHERE id = :id";
+    private static final String UPDATE = "UPDATE \"ProjectManagement\".project " +
+            "SET title = :title, start_dt = :start_dt, end_dt = :end_dt, progress = :progress " +
             "WHERE id = :id";
-    private static final String SELECT_BY_ID  = "SELECT * FROM \"ProjectManagement\".project WHERE id = :id";
-    private static final String SELECT_BY_USER_ID = "SELECT p.id, p.title, p.start_dt, p.end_dt, p.progress FROM \"ProjectManagement\".project_customer pc JOIN \"ProjectManagement\".project p ON p.id = pc.project_id WHERE customer_id = :id " +
-    "UNION SELECT p.id, p.title, p.start_dt, p.end_dt, p.progress FROM \"ProjectManagement\".project_manager pm JOIN \"ProjectManagement\".project p ON p.id = pm.project_id WHERE employee_id = :id " +
-    "UNION SELECT p.id, p.title, p.start_dt, p.end_dt, p.progress FROM \"ProjectManagement\".task_executor tex " +
-    "JOIN \"ProjectManagement\".task t ON tex.task_id  = t.id " +
-    "JOIN \"ProjectManagement\".sprint s ON t.sprint = s.id " +
-    "JOIN \"ProjectManagement\".project p ON s.project = p.id " +
-    "WHERE employee_id = :id";
-    private static final String SELECT_ALL  = "SELECT * FROM \"ProjectManagement\".project";
-    private static final String INSERT_CUSTOMER = "INSERT INTO \"ProjectManagement\".project_customer VALUES (:project_id, :customer_id)";
+    private static final String SELECT_BY_ID = "SELECT * FROM \"ProjectManagement\".project WHERE id = :id";
+    private static final String SELECT_BY_USER_ID = "SELECT p.id, p.title, p.start_dt, p.end_dt, p.progress " +
+            "FROM \"ProjectManagement\".project_customer pc JOIN \"ProjectManagement\".project p ON p.id = pc.project_id " +
+            "WHERE customer_id = :id " +
+            "UNION SELECT p.id, p.title, p.start_dt, p.end_dt, p.progress " +
+            "FROM \"ProjectManagement\".project_manager pm JOIN \"ProjectManagement\".project p ON p.id = pm.project_id " +
+            "WHERE employee_id = :id " +
+            "UNION SELECT p.id, p.title, p.start_dt, p.end_dt, p.progress " +
+            "FROM \"ProjectManagement\".task_executor tex " +
+            "JOIN \"ProjectManagement\".task t ON tex.task_id  = t.id " +
+            "JOIN \"ProjectManagement\".sprint s ON t.sprint = s.id " +
+            "JOIN \"ProjectManagement\".project p ON s.project = p.id " +
+            "WHERE employee_id = :id";
+    private static final String SELECT_ALL = "SELECT * FROM \"ProjectManagement\".project";
+    private static final String INSERT_CUSTOMER = "INSERT INTO \"ProjectManagement\".project_customer " +
+            "VALUES (:project_id, :customer_id)";
 
     private NamedParameterJdbcTemplate jdbcTemplate;
 
     @Autowired
-    public void setDataSource(DataSource dataSource){
+    public void setDataSource(DataSource dataSource) {
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
     }
 
@@ -100,7 +109,7 @@ public class JdbcProjectDao implements ProjectDao {
 
         params.addValue(CUSTOMER_ID, customer);
 
-        jdbcTemplate.update(INSERT_CUSTOMER,params);
+        jdbcTemplate.update(INSERT_CUSTOMER, params);
 
         return true;
     }

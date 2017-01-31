@@ -38,8 +38,8 @@ public class MemberService implements SearchMember, Load, SearchExecutor, AlterE
     public List<Member> getAvailableEmployeeList() {
         List<Member> employees = memberDao.getAvailableEmployeeList();
 
-        for (int i = 0; i < employees.size(); i++){
-            if (employees.get(i).getPosition().getPosName().equals("Project Manager")){
+        for (int i = 0; i < employees.size(); i++) {
+            if (employees.get(i).getPosition().getPosName().equals("Project Manager")) {
                 employees.remove(i);
             }
         }

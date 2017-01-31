@@ -48,8 +48,7 @@ public class JdbcTaskDao implements TaskDao {
             "\"ProjectManagement\".task t ON tex.task_id = t.id " +
             "WHERE employee_id = :employee_id";
     private static final String SELECT_MAX_ID = "SELECT last_value FROM \"ProjectManagement\".task_id_seq";
-    private static final String TASK_SEQ = "\"ProjectManagement\".task_id_seq";
-    private static final String SEQ_NAME = "sequence_name";
+
     private static final String SELECT_TASK = "SELECT * FROM \"ProjectManagement\".task WHERE id = :id";
 
     private NamedParameterJdbcTemplate jdbcTemplate;
@@ -151,8 +150,6 @@ public class JdbcTaskDao implements TaskDao {
     @Override
     public Long getTaskMaxId() {
         MapSqlParameterSource params = new MapSqlParameterSource();
-
-        params.addValue(SEQ_NAME, TASK_SEQ);
 
         return jdbcTemplate.queryForObject(SELECT_MAX_ID, params, Integer.class).longValue();
     }

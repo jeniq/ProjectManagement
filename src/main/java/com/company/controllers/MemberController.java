@@ -28,7 +28,7 @@ public class MemberController {
     private MemberService memberService;
 
     @RequestMapping(value = "/newMember", method = RequestMethod.GET)
-    public ModelAndView newMember(){
+    public ModelAndView newMember() {
         ModelAndView modelAndView = new ModelAndView();
 
         List<Position> positionList = positionService.getPositionList();
@@ -45,7 +45,7 @@ public class MemberController {
 
     // Creates member using request
     @RequestMapping(value = "/addMember", method = RequestMethod.POST)
-    public String addMember(HttpServletRequest request){
+    public String addMember(HttpServletRequest request) {
         Member member = new Member();
 
         member.setName(request.getParameter(Constant.NAME));

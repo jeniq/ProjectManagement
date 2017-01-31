@@ -6,8 +6,12 @@ import java.util.List;
 
 public interface SearchMember {
     Member getMember(Long id);
+
     List<Member> getMemberList();
+
     List<Member> getProjectManagerList();
+
     List<Member> getAvailableEmployeeList();
+
     List<Member> getCustomerList();
 }

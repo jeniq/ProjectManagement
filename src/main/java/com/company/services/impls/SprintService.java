@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class SprintService implements SearchSprint, AlterEntity<Sprint>, SprintInfo, EditSprint{
+public class SprintService implements SearchSprint, AlterEntity<Sprint>, SprintInfo, EditSprint {
 
     @Autowired
     private SprintDao sprintDao;
@@ -62,13 +62,13 @@ public class SprintService implements SearchSprint, AlterEntity<Sprint>, SprintI
         int doneTask = 0;
         List<Task> taskList = taskDao.getTaskListBySprintId(sprint.getId());
 
-        for (Task t : taskList){
-            if (t.getIsDone()){
+        for (Task t : taskList) {
+            if (t.getIsDone()) {
                 doneTask++;
             }
         }
 
-        return taskList.size() == 0 ? 0 : doneTask/taskList.size()*100;
+        return taskList.size() == 0 ? 0 : doneTask / taskList.size() * 100;
     }
 
     @Override

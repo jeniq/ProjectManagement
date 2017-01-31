@@ -65,7 +65,7 @@ public class JdbcMemberDao implements MemberDao {
     private NamedParameterJdbcTemplate jdbcTemplate;
 
     @Autowired
-    public void setDataSource(DataSource dataSource){
+    public void setDataSource(DataSource dataSource) {
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
     }
 
@@ -109,7 +109,7 @@ public class JdbcMemberDao implements MemberDao {
 
         try {
             return jdbcTemplate.queryForObject(SELECT_BY_EMAIL_PASSWORD, params, new MemberRowMapper());
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
             return null;
         }
@@ -151,7 +151,7 @@ public class JdbcMemberDao implements MemberDao {
         return jdbcTemplate.query(SELECT_CUSTOMER_LIST, new MemberRowMapper());
     }
 
-    private static final class MemberRowMapper implements RowMapper<Member>{
+    private static final class MemberRowMapper implements RowMapper<Member> {
 
         @Override
         public Member mapRow(ResultSet rs, int rowNum) throws SQLException {

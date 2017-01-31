@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface SearchPosition {
     List<Position> getPositionList();
+
     Position getById(Integer id);
 }

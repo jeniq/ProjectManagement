@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * This interface sets rules for actions with 'project' table in database.
  */
-public interface ProjectDao extends DmlMethod<Project>{
+public interface ProjectDao extends DmlMethod<Project> {
     boolean create(Project project, Integer manager, Long customer);
 
     // Find project for user with id

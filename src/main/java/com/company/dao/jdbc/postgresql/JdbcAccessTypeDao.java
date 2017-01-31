@@ -26,7 +26,7 @@ public class JdbcAccessTypeDao implements AccessTypeDao {
     private NamedParameterJdbcTemplate jdbcTemplate;
 
     @Autowired
-    public void setDataSource(DataSource dataSource){
+    public void setDataSource(DataSource dataSource) {
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
     }
 
