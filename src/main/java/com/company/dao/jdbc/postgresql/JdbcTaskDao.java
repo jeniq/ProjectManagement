@@ -38,7 +38,8 @@ public class JdbcTaskDao implements TaskDao {
     private static final String INSERT = "INSERT INTO \"ProjectManagement\".task (sprint, title, is_done, start_dt, end_dt, estimate_tm) " +
             "VALUES (:sprint, :title, :is_done, :start_dt, :end_dt, :estimate_tm)";
     private static final String UPDATE = "UPDATE \"ProjectManagement\".task " +
-            "SET sprint = :sprint, title = :title, is_done = :is_done, start_dt = :start_dt, end_dt = :end_dt, estimate_tm = :estimate_tm";
+            "SET sprint = :sprint, title = :title, is_done = :is_done, start_dt = :start_dt, end_dt = :end_dt, estimate_tm = :estimate_tm" +
+            "WHERE id = :id";
     private static final String INSERT_EXECUTOR = "INSERT INTO \"ProjectManagement\".task_executor VALUES (:employee_id, :task_id)";
     private static final String SELECT_TASK_BY_SPRINT = "SELECT * FROM \"ProjectManagement\".task WHERE sprint = :sprint";
     private static final String SELECT_HOURS = "SELECT COUNT(estimate.tm) FROM \"ProjectManagement\".task t " +
@@ -73,6 +74,7 @@ public class JdbcTaskDao implements TaskDao {
     public Integer update(Task task) {
         MapSqlParameterSource params = new MapSqlParameterSource();
 
+        params.addValue(ID, task.getId());
         params.addValue(SPRINT, task.getSprint());
         params.addValue(TASK_NAME, task.getTitle());
         params.addValue(STATUS, task.getIsDone());
