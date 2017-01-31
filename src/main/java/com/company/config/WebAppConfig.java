@@ -27,7 +27,7 @@ import java.sql.SQLException;
 @ComponentScan("com.company")
 @EnableTransactionManagement
 @PropertySource("classpath:connection.properties")
-public class WebAppConfig extends WebMvcConfigurerAdapter implements TransactionManagementConfigurer {
+public class WebAppConfig extends WebMvcConfigurerAdapter implements TransactionManagementConfigurer{
 
     @Autowired
     private Environment env;
@@ -84,4 +84,5 @@ public class WebAppConfig extends WebMvcConfigurerAdapter implements Transaction
     public PlatformTransactionManager annotationDrivenTransactionManager() {
         return transactionManager();
     }
+
 }

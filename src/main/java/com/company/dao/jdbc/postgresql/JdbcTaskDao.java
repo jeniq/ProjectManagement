@@ -7,10 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
@@ -36,6 +37,8 @@ public class JdbcTaskDao implements TaskDao {
     // Queries
     private static final String INSERT = "INSERT INTO \"ProjectManagement\".task (sprint, title, is_done, start_dt, end_dt, estimate_tm) " +
             "VALUES (:sprint, :title, :is_done, :start_dt, :end_dt, :estimate_tm)";
+    private static final String UPDATE = "UPDATE \"ProjectManagement\".task " +
+            "SET sprint = :sprint, title = :title, is_done = :is_done, start_dt = :start_dt, end_dt = :end_dt, estimate_tm = :estimate_tm";
     private static final String INSERT_EXECUTOR = "INSERT INTO \"ProjectManagement\".task_executor VALUES (:employee_id, :task_id)";
     private static final String SELECT_TASK_BY_SPRINT = "SELECT * FROM \"ProjectManagement\".task WHERE sprint = :sprint";
     private static final String SELECT_HOURS = "SELECT COUNT(estimate.tm) FROM \"ProjectManagement\".task t " +
@@ -47,24 +50,13 @@ public class JdbcTaskDao implements TaskDao {
     private static final String SELECT_MAX_ID = "SELECT last_value FROM \"ProjectManagement\".task_id_seq";
     private static final String TASK_SEQ = "\"ProjectManagement\".task_id_seq";
     private static final String SEQ_NAME = "sequence_name";
+    private static final String SELECT_TASK = "SELECT * FROM \"ProjectManagement\".task WHERE id = :id";
 
-    private SimpleJdbcInsert insertTask;
     private NamedParameterJdbcTemplate jdbcTemplate;
 
     @Autowired
-    public void setDataSource(DataSource dataSource){
+    public void setDataSource(DataSource dataSource) {
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
-        this.insertTask = new SimpleJdbcInsert(dataSource).withTableName(TASK).usingColumns(
-                ID,
-                SPRINT,
-                TASK_NAME,
-                DESCRIPTION,
-                STATUS,
-                START_DATE,
-                ESTIMATE_TIME,
-                END_DATE
-        );
-
     }
 
 
@@ -80,10 +72,21 @@ public class JdbcTaskDao implements TaskDao {
 
     @Override
     public int update(Task task) {
-        return 0;
+        MapSqlParameterSource params = new MapSqlParameterSource();
+
+        params.addValue(SPRINT, task.getSprint());
+        params.addValue(TASK_NAME, task.getTitle());
+        params.addValue(STATUS, task.getIsDone());
+        params.addValue(START_DATE, task.getStartDate());
+        params.addValue(END_DATE, task.getEndDate());
+        params.addValue(ESTIMATE_TIME, task.getEstimateTime());
+        params.addValue(WEEK, task.getWeekNo());
+
+        return jdbcTemplate.update(UPDATE, params);
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRED)
     public boolean create(Task task, Member member) {
         KeyHolder keyHolder = new GeneratedKeyHolder();
         MapSqlParameterSource params = new MapSqlParameterSource();
@@ -107,7 +110,12 @@ public class JdbcTaskDao implements TaskDao {
 
     @Override
     public Task getTask(long id) {
-        return null;
+
+        MapSqlParameterSource params = new MapSqlParameterSource();
+
+        params.addValue(ID, id);
+
+        return jdbcTemplate.queryForObject(SELECT_TASK, params, new JdbcTaskDao.TaskRowMapper());
     }
 
     @Override
@@ -125,7 +133,7 @@ public class JdbcTaskDao implements TaskDao {
 
         params.addValue(ID, id);
 
-        Number number =  jdbcTemplate.queryForObject(SELECT_HOURS, params, Integer.class);
+        Number number = jdbcTemplate.queryForObject(SELECT_HOURS, params, Integer.class);
 
         return (number != null ? number.intValue() : 0);
     }
