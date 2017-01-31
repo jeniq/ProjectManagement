@@ -11,7 +11,7 @@ public interface ProjectDao extends DmlMethod<Project>{
     boolean create(Project project, Integer manager, Long customer);
 
     // Find project for user with id
-    Project getProjectById(Integer id);
+    Project getProjectById(Long id);
 
     // Find all projects
     List<Project> getProjectList();

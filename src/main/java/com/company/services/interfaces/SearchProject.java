@@ -6,7 +6,7 @@ import com.company.entities.Project;
 import java.util.List;
 
 public interface SearchProject {
-    Project getProjectById(Integer id);
+    Project getProjectById(Long id);
     List<Project> getProjectList(Member member);
-    Project details(Integer id);
+    Project details(Long id);
 }

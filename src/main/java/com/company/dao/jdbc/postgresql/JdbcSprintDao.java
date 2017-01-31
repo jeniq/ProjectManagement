@@ -34,7 +34,8 @@ public class JdbcSprintDao implements SprintDao {
     "SELECT s.id, s.is_done, s.project, s.progress FROM \"ProjectManagement\".project p JOIN \"ProjectManagement\".sprint s ON p.id = s.project " +
     "JOIN \"ProjectManagement\".project_manager pm ON p.id = pm.project_id WHERE employee_id = :id";
     private static final String SELECT_SPRINT_MAX_ID = "SELECT last_value FROM \"ProjectManagement\".sprint_id_seq";
-    private static final String UPDATE_PROGRESS = "UPDATE \"ProjectManagement\".sprint SET progress = :progress, is_done = :is_done";
+    private static final String UPDATE_PROGRESS = "UPDATE \"ProjectManagement\".sprint SET progress = :progress, is_done = :is_done " +
+            "WHERE id = :id";
     private static final String SELECT_SPRINT = "SELECT * FROM \"ProjectManagement\".sprint WHERE id = :id";
 
 
@@ -85,6 +86,7 @@ public class JdbcSprintDao implements SprintDao {
 
         params.addValue(PROGRESS, sprint.getProgress());
         params.addValue(STATUS, sprint.getDone());
+        params.addValue(ID, sprint.getId());
 
         return jdbcTemplate.update(UPDATE_PROGRESS, params);
     }

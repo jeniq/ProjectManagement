@@ -63,7 +63,7 @@ public class ProjectController {
     }
 
     @RequestMapping(value = "/project{id}", method = RequestMethod.GET)
-    public String projectDetails(@PathVariable(value = "id") Integer id, HttpServletRequest request) {
+    public String projectDetails(@PathVariable(value = "id") Long id, HttpServletRequest request) {
         Project project = projectService.details(id);
         List<Sprint> sprintList = sprintService.getSprintList(id);
 
@@ -82,7 +82,7 @@ public class ProjectController {
     }
 
     @RequestMapping(value = "/deleteProject{id}", method = RequestMethod.GET)
-    public String deleteProject(@PathVariable(value = "id") Integer id) {
+    public String deleteProject(@PathVariable(value = "id") Long id) {
         projectService.remove(projectService.getProjectById(id));
         return Page.REDIRECT_ADMINISTRATOR;
     }

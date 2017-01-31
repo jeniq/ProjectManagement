@@ -29,12 +29,14 @@ public class JdbcProjectDao implements ProjectDao {
     private static final String PROJECT_ID = "project_id";
     private static final String EMPLOYEE_ID = "employee_id";
     private static final String CUSTOMER_ID = "customer_id";
+    private static final String PROGRESS = "progress";
 
     // Queries
     private static final String INSERT_PROJECT  = "INSERT INTO \"ProjectManagement\".project (title, start_dt, end_dt) VALUES (:title, :start_dt, :end_dt)";
     private static final String INSERT_PROJECT_MANAGER  = "INSERT INTO \"ProjectManagement\".project_manager VALUES (:project_id, :employee_id)";
     private static final String DELETE  = "DELETE FROM \"ProjectManagement\".project WHERE id = :id";
-    private static final String UPDATE  = "";
+    private static final String UPDATE  = "UPDATE \"ProjectManagement\".project SET title = :title, start_dt = :start_dt, end_dt = :end_dt, progress = :progress " +
+            "WHERE id = :id";
     private static final String SELECT_BY_ID  = "SELECT * FROM \"ProjectManagement\".project WHERE id = :id";
     private static final String SELECT_BY_USER_ID = "SELECT p.id, p.title, p.start_dt, p.end_dt FROM \"ProjectManagement\".project_customer pc JOIN \"ProjectManagement\".project p ON p.id = pc.project_id WHERE customer_id = :id " +
     "UNION SELECT p.id, p.title, p.start_dt, p.end_dt FROM \"ProjectManagement\".project_manager pm JOIN \"ProjectManagement\".project p ON p.id = pm.project_id WHERE employee_id = :id " +
@@ -67,7 +69,15 @@ public class JdbcProjectDao implements ProjectDao {
 
     @Override
     public Integer update(Project project) {
-        return 0;
+        MapSqlParameterSource params = new MapSqlParameterSource();
+
+        params.addValue(TITLE, project.getTitle());
+        params.addValue(START_DATE, project.getStartDate());
+        params.addValue(END_DATE, project.getEndDate());
+        params.addValue(PROGRESS, project.getProgress());
+        params.addValue(ID, project.getId());
+
+        return jdbcTemplate.update(UPDATE, params);
     }
 
     @Override
@@ -96,7 +106,7 @@ public class JdbcProjectDao implements ProjectDao {
     }
 
     @Override
-    public Project getProjectById(Integer id) {
+    public Project getProjectById(Long id) {
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue(ID, id);
         return jdbcTemplate.queryForObject(SELECT_BY_ID, params, new ProjectRowMapper());
@@ -125,6 +135,7 @@ public class JdbcProjectDao implements ProjectDao {
             project.setTitle(rs.getString(TITLE));
             project.setStartDate(rs.getDate(START_DATE));
             project.setEndDate(rs.getDate(END_DATE));
+            project.setProgress(rs.getInt(PROGRESS));
 
             return project;
         }

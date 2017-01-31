@@ -24,7 +24,7 @@ public class ProjectService implements SearchProject, AlterEntity<Project>, Edit
     private SprintDao sprintDao;
 
     @Override
-    public Project getProjectById(Integer id) {
+    public Project getProjectById(Long id) {
         return projectDao.getProjectById(id);
     }
 
@@ -37,7 +37,7 @@ public class ProjectService implements SearchProject, AlterEntity<Project>, Edit
     }
 
     @Override
-    public Project details(Integer id) {
+    public Project details(Long id) {
         return projectDao.getProjectById(id);
     }
 
@@ -53,7 +53,7 @@ public class ProjectService implements SearchProject, AlterEntity<Project>, Edit
 
     @Override
     public Integer edit(Project project) {
-        return 0;
+        return projectDao.update(project);
     }
 
     @Override
@@ -65,10 +65,22 @@ public class ProjectService implements SearchProject, AlterEntity<Project>, Edit
     }
 
     @Override
+    public Integer updateProgress(Long id) {
+        Project project = getProjectById(id);
+        project.setProgress(getProjectProgress(project));
+
+        return edit(project);
+    }
+
+    @Override
     public Integer getProjectProgress(Project project) {
-        int sprintDone = 0;
+        int sprintProgress = 0;
         List<Sprint> sprintList = sprintDao.getSprintListByProjectId(project.getId());
 
-        return
+        for (Sprint s : sprintList){
+            sprintProgress += s.getProgress();
+        }
+
+        return sprintList.size() > 0 ? sprintProgress / sprintList.size() : 0;
     }
 }
