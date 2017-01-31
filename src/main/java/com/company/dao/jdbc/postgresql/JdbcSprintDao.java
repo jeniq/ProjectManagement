@@ -24,11 +24,16 @@ public class JdbcSprintDao implements SprintDao {
     private static String PROJECT_ID = "project_id";
 
     // Queries
+    private static String INSERT = "INSERT INTO \"ProjectManagement\".sprint (id, project) VALUES (:id, :project)";
     private static String SELECT_SPRINT_BY_PROJECT = "SELECT * FROM \"ProjectManagement\".sprint WHERE project = :project_id";
-    private static String SELECT_SPRINT_BY_MEMBER = "SELECT * FROM \"ProjectManagement\".sprint s " +
-            "JOIN \"ProjectManagement\".task t ON s.id = t.sprint " +
-            "JOIN \"ProjectManagement\".task_executor tex ON t.id = tex.task_id " +
-            "WHERE employee_id = :id";
+    private static String SELECT_SPRINT_BY_MEMBER = "SELECT s.id, s.is_done, project FROM \"ProjectManagement\".sprint s " +
+    "JOIN \"ProjectManagement\".task t ON s.id = t.sprint " +
+    "JOIN \"ProjectManagement\".task_executor tex ON t.id = tex.task_id " +
+    "WHERE employee_id = :id " +
+    "UNION " +
+    "SELECT s.id, s.is_done, project FROM \"ProjectManagement\".project p JOIN \"ProjectManagement\".sprint s ON p.id = s.project " +
+    "JOIN \"ProjectManagement\".project_manager pm ON p.id = pm.project_id WHERE employee_id = :id";
+    private static String SELECT_SPRINT_MAX_ID = "SELECT last_value FROM \"ProjectManagement\".sprint_id_seq";
 
     private SimpleJdbcInsert insertSprint;
     private NamedParameterJdbcTemplate jdbcTemplate;
@@ -66,15 +71,20 @@ public class JdbcSprintDao implements SprintDao {
     }
 
     @Override
+    public Long getSprintMaxId() {
+        MapSqlParameterSource params = new MapSqlParameterSource();
+
+        return jdbcTemplate.queryForObject(SELECT_SPRINT_MAX_ID, params, Long.class).longValue();
+    }
+
+    @Override
     public int insert(Sprint sprint) {
 
         MapSqlParameterSource params = new MapSqlParameterSource();
-
         params.addValue(ID, sprint.getId());
-        params.addValue(STATUS, sprint.getDone());
         params.addValue(PROJECT, sprint.getProjectId());
 
-        return insertSprint.execute(params);
+        return jdbcTemplate.update(INSERT, params);
 
     }
 

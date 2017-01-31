@@ -1,8 +1,11 @@
 package com.company.entities;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class Sprint {
     private Long id;
     private Boolean isDone;

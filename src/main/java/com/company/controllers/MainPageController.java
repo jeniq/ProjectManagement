@@ -28,7 +28,7 @@ public class MainPageController {
     private TaskService taskService;
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
-    public ModelAndView projectList(@ModelAttribute(Constant.MEMBER) Member member){
+    public ModelAndView projectList(@ModelAttribute(Constant.MEMBER) Member member) {
 
         ModelAndView modelAndView = new ModelAndView();
         List<Project> projectList = projectService.getProjectList(member);
@@ -42,7 +42,7 @@ public class MainPageController {
     }
 
     @RequestMapping(value = "/customer")
-    public ModelAndView customerMainPage(@ModelAttribute(Constant.MEMBER) Member member){
+    public ModelAndView customerMainPage(@ModelAttribute(Constant.MEMBER) Member member) {
         ModelAndView modelAndView = new ModelAndView();
         List<Project> projectList = projectService.getProjectList(member);
 
@@ -53,8 +53,8 @@ public class MainPageController {
     }
 
     @RequestMapping(value = "/employee")
-    public String employeeMainPage(@ModelAttribute(Constant.MEMBER) Member member, HttpServletRequest request){
-        if (member.getPosition().getPosName().equals(Constant.PROJECT_MANAGER)){
+    public String employeeMainPage(@ModelAttribute(Constant.MEMBER) Member member, HttpServletRequest request) {
+        if (member.getPosition().getPosName().equals(Constant.PROJECT_MANAGER)) {
             return Page.REDIRECT_PROJECT_MANANGER;
         }
 
@@ -64,14 +64,9 @@ public class MainPageController {
     }
 
     @RequestMapping(value = "/projectManager")
-    public ModelAndView projectManagerMainPage(@ModelAttribute(Constant.MEMBER) Member member){
-        ModelAndView modelAndView = new ModelAndView();
-
-        modelAndView.addObject(Constant.PROJECT_LIST, projectService.getProjectList(member));
-        modelAndView.setViewName(Page.MAIN_PROJECT_MANAGER);
-
-        return modelAndView;
+    public ModelAndView projectManagerMainPage(@ModelAttribute(Constant.MEMBER) Member member) {
+        return new ModelAndView(Page.MAIN_PROJECT_MANAGER,
+                Constant.PROJECT_LIST, projectService.getProjectList(member));
     }
-
 
 }

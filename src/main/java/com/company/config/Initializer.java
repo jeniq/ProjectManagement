@@ -15,7 +15,6 @@ import javax.servlet.ServletRegistration;
  * in ServletContext. DispatcherServlets mapped to "/" URLs and set to eagerly load on
  * application startup.
  */
-
 public class Initializer implements WebApplicationInitializer {
 
     private static final String DISPATCHER_SERVLET_NAME = "dispatcher";

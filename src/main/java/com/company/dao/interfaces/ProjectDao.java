@@ -18,4 +18,5 @@ public interface ProjectDao extends DmlMethod<Project>{
 
     // Find project(s) for user with 'id'
     List<Project> getProjectList(long id);
+
 }

@@ -1,7 +1,6 @@
 package com.company.services.impls;
 
 import com.company.dao.interfaces.MemberDao;
-import com.company.dao.interfaces.TaskDao;
 import com.company.entities.Member;
 import com.company.services.interfaces.Load;
 import com.company.services.interfaces.SearchExecutor;
@@ -18,12 +17,10 @@ public class MemberService implements SearchMember, Load, SearchExecutor {
 
     @Autowired
     private MemberDao memberDao;
-    @Autowired
-    private TaskDao taskDao;
 
     @Override
     public Member getMember(long id) {
-        return null;
+        return memberDao.getMemberById(id);
     }
 
     @Override
@@ -34,6 +31,19 @@ public class MemberService implements SearchMember, Load, SearchExecutor {
     @Override
     public List<Member> getProjectManagerList() {
         return memberDao.getProjectManagerList();
+    }
+
+    @Override
+    public List<Member> getAvailableEmployeeList() {
+        List<Member> employees = memberDao.getAvailableEmployeeList();
+
+        for (int i = 0; i < employees.size(); i++){
+            if (employees.get(i).getPosition().getPosName().equals("Project Manager")){
+                employees.remove(i);
+            }
+        }
+
+        return employees;
     }
 
     @Override

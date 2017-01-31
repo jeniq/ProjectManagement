@@ -1,12 +1,12 @@
 package com.company.entities;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Service
+@Component
 public class Task {
     private Long id;
     private Long sprint;

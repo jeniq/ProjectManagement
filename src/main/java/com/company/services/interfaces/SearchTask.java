@@ -12,4 +12,7 @@ public interface SearchTask {
 
     // Searches task(s) for sprint with 'id'
     List<Task> getTaskListBySprint(Long id);
+
+    //
+    Long getNewTaskId();
 }

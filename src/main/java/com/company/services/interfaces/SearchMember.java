@@ -8,4 +8,5 @@ public interface SearchMember {
     Member getMember(long id);
     List<Member> getMemberList();
     List<Member> getProjectManagerList();
+    List<Member> getAvailableEmployeeList();
 }

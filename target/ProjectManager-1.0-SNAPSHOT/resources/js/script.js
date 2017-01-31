@@ -41,7 +41,7 @@ $(function () {
     });
     $('#datetimepicker-4, #datetimepicker-5').datetimepicker({
         viewMode: 'days',
-        format: 'DD/MM/YYYY'
+        format: 'YYYY/MM/DD'
     })
 });
 
@@ -82,19 +82,22 @@ $(function(){
         return false;
     });
 
+    $('.createTaskBtn').on('click', function (e) {
+        $.ajax($(e.currentTarget).attr('href')).done(function (d) {
+            $('#addNewTask').html(d).modal();
+        });
+        return false;
+    });
+
+    $('.createSprintBtn').on('click', function (e) {
+        $.ajax($(e.currentTarget).attr('href')).done(function (d) {
+            $('#addNewSprint').html(d).modal();
+        });
+        return false;
+    });
+
 });
 
-
-
-//---- Add new sprint & task
-
-function addNewSprint() {
-    alert("New Spint created!");
-}
-
-function addNewTask() {
-    alert("New Task created!");
-}
 
 
 
@@ -177,7 +180,7 @@ function deleting(){
 }
 
 function close(){
-    console.log("Cansel");
+    console.log("Cancel");
     $("#projectInfo").modal('show');
 }
 
@@ -185,12 +188,6 @@ function success(){
     console.log("Success!");
     $("#projectInfo").modal('hide');
 }
-
-
-function test() {
-    console.log("hello");
-}
-
 
 
 

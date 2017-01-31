@@ -33,7 +33,12 @@ public class SprintService implements SearchSprint, AlterEntity<Sprint>, SprintI
 
     @Override
     public List<Sprint> getSprintListByMember(long id) {
-        return null;
+        return sprintDao.getSprintListByMemberId(id);
+    }
+
+    @Override
+    public Long getSprintNewId() {
+        return sprintDao.getSprintMaxId() + 1;
     }
 
     @Override

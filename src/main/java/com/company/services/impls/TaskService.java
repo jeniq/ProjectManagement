@@ -1,8 +1,10 @@
 package com.company.services.impls;
 
 import com.company.dao.interfaces.TaskDao;
+import com.company.entities.Member;
 import com.company.entities.Task;
 import com.company.services.interfaces.AlterEntity;
+import com.company.services.interfaces.EditTask;
 import com.company.services.interfaces.SearchTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class TaskService implements SearchTask, AlterEntity<Task> {
+public class TaskService implements SearchTask, AlterEntity<Task>, EditTask {
 
     @Autowired
     private TaskDao taskDao;
@@ -31,6 +33,11 @@ public class TaskService implements SearchTask, AlterEntity<Task> {
     }
 
     @Override
+    public Long getNewTaskId() {
+        return taskDao.getTaskMaxId() + 1;
+    }
+
+    @Override
     public boolean add(Task task) {
         int insertResult = taskDao.insert(task);
 
@@ -45,5 +52,11 @@ public class TaskService implements SearchTask, AlterEntity<Task> {
     @Override
     public boolean edit(Task task) {
         return false;
+    }
+
+    @Override
+    //@Transactional(propagation = Propagation.REQUIRED)
+    public boolean create(Task task, Member executor) {
+        return taskDao.create(task, executor);
     }
 }

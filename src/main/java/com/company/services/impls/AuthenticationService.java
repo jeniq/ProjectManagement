@@ -1,6 +1,5 @@
 package com.company.services.impls;
 
-import com.company.dao.interfaces.AccessTypeDao;
 import com.company.dao.interfaces.MemberDao;
 import com.company.entities.Member;
 import com.company.services.interfaces.Security;
@@ -8,20 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AuthenticationService implements Security{
+public class AuthenticationService implements Security {
 
     @Autowired
     private MemberDao memberDao;
-
-    @Autowired
-    private AccessTypeDao accessTypeDao;
-
 
     @Override
     public Member login(Member member) {
         member = memberDao.getMemberByEmailPassword(member.getEmail(), member.getPassword());
 
-        if (member == null){
+        if (member == null) {
             return null;
         }
 

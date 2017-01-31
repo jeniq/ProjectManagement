@@ -39,7 +39,7 @@ public class ProjectController {
     TaskService taskService;
 
     @RequestMapping(value = "/newProject", method = RequestMethod.GET)
-    public ModelAndView newProject(){
+    public ModelAndView newProject() {
         ModelAndView modelAndView = new ModelAndView();
         List<Member> projectManagerList = memberService.getProjectManagerList();
 
@@ -52,21 +52,22 @@ public class ProjectController {
     }
 
     @RequestMapping(value = "/addProject", method = RequestMethod.POST)
-    public String addProject(@ModelAttribute("project") Project project, HttpServletRequest request){
-        int projectManagerId = Integer.parseInt(request.getParameter(Constant.PROJECT_MANAGER));
+    public String addProject(@ModelAttribute(Constant.PROJECT) Project project, HttpServletRequest request) {
+        Integer projectManagerId = Integer.parseInt(request.getParameter(Constant.PROJECT_MANAGER));
         projectService.create(project, projectManagerId);
+
         return Page.REDIRECT_ADMINISTRATOR;
     }
 
-    @RequestMapping(value ="/project{id}", method = RequestMethod.GET)
-    public String projectDetails(@PathVariable(value = "id") Integer id, HttpServletRequest request){
+    @RequestMapping(value = "/project{id}", method = RequestMethod.GET)
+    public String projectDetails(@PathVariable(value = "id") Integer id, HttpServletRequest request) {
         Project project = projectService.details(id);
         List<Sprint> sprintList = sprintService.getSprintList(id);
 
         for (Sprint s : sprintList) {
             s.setTaskList(taskService.getTaskListBySprint(s.getId()));
             s.setProgress(sprintService.getSprintProgress(s));
-            for (Task t : s.getTaskList()){
+            for (Task t : s.getTaskList()) {
                 t.setEmployeeList(memberService.getEmployeeListForTask(t.getId()));
             }
         }
@@ -78,7 +79,7 @@ public class ProjectController {
     }
 
     @RequestMapping(value = "/deleteProject{id}", method = RequestMethod.GET)
-    public String deleteProject(@PathVariable(value = "id") Integer id){
+    public String deleteProject(@PathVariable(value = "id") Integer id) {
         projectService.remove(projectService.getProjectById(id));
         return Page.REDIRECT_ADMINISTRATOR;
     }

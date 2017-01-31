@@ -23,7 +23,8 @@
                         <th>${project.endDate}</th>
                         <th>
                             <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="${project.progress}" aria-valuemin="0" aria-valuemax="100" style="width: ${project.progress}%;">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="${project.progress}"
+                                     aria-valuemin="0" aria-valuemax="100" style="width: ${project.progress}%;">
                                     ${project.progress}%
                                 </div>
                             </div>
@@ -33,7 +34,7 @@
             </div>
 
             <div class="panel-group" id="accordion">
-                <c:forEach var = "sprint" items="${sprintList}">
+                <c:forEach var="sprint" items="${sprintList}">
                     <div class="panel panel-default" id="accordion-1">
                         <div class="panel-heading sprint-heading">
                             <h4 class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
@@ -50,12 +51,14 @@
                                         <th>Progress</th>
                                     </tr>
                                     </thead>
-                                    <tbody >
+                                    <tbody>
                                     <tr>
                                         <th>
                                             <div class="progress">
-                                                <div class="progress-bar" role="progressbar" aria-valuenow="${sprint.progress}" aria-valuemin="0" aria-valuemax="100" style="width: ${sprint.progress}%;">
-                                                    ${sprint.progress}%
+                                                <div class="progress-bar" role="progressbar"
+                                                     aria-valuenow="${sprint.progress}" aria-valuemin="0"
+                                                     aria-valuemax="100" style="width: ${sprint.progress}%;">
+                                                        ${sprint.progress}%
                                                 </div>
                                             </div>
                                         </th>
@@ -64,11 +67,12 @@
                                 </table>
 
                                 <!-- TASK_1 -->
-                                    <div class="panel-task ">
-                                        <c:forEach var = "task" items="${sprint.taskList}">
+                                <div class="panel-task ">
+                                    <c:forEach var="task" items="${sprint.taskList}">
                                         <div class="panel-heading task-heading">
                                             <h4 class="panel-title">
-                                                <h4 data-toggle="collapse" data-parent="#accordion-1" href="#collapseTwo">
+                                                <h4 data-toggle="collapse" data-parent="#accordion-1"
+                                                    href="#collapseTwo">
                                                         ${task.title}
                                                 </h4>
                                             </h4>
@@ -120,8 +124,8 @@
                                                         </th>
                                                         <th>
                                                             <p><span class="label label-success">
-                                                                    <c:if test ="${task.isDone}">Done</c:if>
-                                                                    <c:if test ="!${task.isDone}">Not done</c:if>
+                                                                    <c:if test="${task.isDone}">Done</c:if>
+                                                                    <c:if test="!${task.isDone}">Not done</c:if>
                                                                 </span>
                                                             </p>
                                                         </th>
@@ -132,7 +136,7 @@
                                                             <label>Members</label>
                                                         </th>
                                                         <th>
-                                                            <c:forEach var = "executor" items="${task.employeeList}">
+                                                            <c:forEach var="executor" items="${task.employeeList}">
                                                                 <p>${executor.name} ${executor.surname}: ${executor.position.posName}</p>
                                                             </c:forEach>
                                                         </th>
@@ -142,8 +146,8 @@
                                                 </table>
                                             </div>
                                         </div>
-                                        </c:forEach>
-                                    </div>
+                                    </c:forEach>
+                                </div>
                                 <!-- END_TASK_1 -->
 
                             </div>
@@ -156,9 +160,6 @@
         <div class="modal-footer">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <form action="/deleteProject${project.id}">
-                        <button type="submit" class="btn btn-danger del" data-toggle="modal" data-target="#deletinProject" onclick="success()">Delete Project</button>
-                    </form>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>

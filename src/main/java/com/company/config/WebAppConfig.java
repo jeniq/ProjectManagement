@@ -8,6 +8,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -21,8 +25,9 @@ import java.sql.SQLException;
 @Configuration
 @EnableWebMvc
 @ComponentScan("com.company")
+@EnableTransactionManagement
 @PropertySource("classpath:connection.properties")
-public class WebAppConfig extends WebMvcConfigurerAdapter {
+public class WebAppConfig extends WebMvcConfigurerAdapter implements TransactionManagementConfigurer {
 
     @Autowired
     private Environment env;
@@ -34,7 +39,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
     }
 
     @Override
-    public void addInterceptors(InterceptorRegistry registry){
+    public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginPageInterceptor()).addPathPatterns("/");
     }
 
@@ -66,4 +71,17 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
         return ds;
     }
 
+    @Bean
+    public PlatformTransactionManager transactionManager() {
+        try {
+            return new DataSourceTransactionManager(getDataSource());
+        } catch (SQLException e) {
+            return null;
+        }
+    }
+
+    @Override
+    public PlatformTransactionManager annotationDrivenTransactionManager() {
+        return transactionManager();
+    }
 }

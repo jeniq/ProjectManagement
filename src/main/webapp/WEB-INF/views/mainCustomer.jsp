@@ -1,27 +1,20 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Yevhen
-  Date: 23.01.2017
-  Time: 3:18
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <title>Main</title>
 
-    <link href = "<c:url value = "/resources/css/customer.css" />" rel = "stylesheet" >
-    <link href = "<c:url value = "/resources/css/bootstrap.css" />" rel = "stylesheet">
-    <link href = "<c:url value = "/resources/css/bootstrap-datetimepicker.min.css" />" rel = "stylesheet">
+    <link href="<c:url value = "/resources/css/customer.css" />" rel="stylesheet">
+    <link href="<c:url value = "/resources/css/bootstrap.css" />" rel="stylesheet">
+    <link href="<c:url value = "/resources/css/bootstrap-datetimepicker.min.css" />" rel="stylesheet">
 
-    <script type="text/javascript" src = "/resources/js/jquery.min.js" ></script>
-    <script type="text/javascript" src = "/resources/js/moment.js" ></script>
-    <script type="text/javascript" src = "/resources/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src = "/resources/js/bootstrap-datetimepicker.min.js" ></script>
-    <script type="text/javascript" src = "/resources/js/script.js" ></script>
+    <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/resources/js/moment.js"></script>
+    <script type="text/javascript" src="/resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/resources/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="/resources/js/script.js"></script>
 
 </head>
 <body>
@@ -31,7 +24,9 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <!-- make menu for mobile version -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <!-- make menu for mobile version -->
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -74,20 +69,21 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var = "project" items="${projectList}">
-                    <tr>
-                        <th>project.id</th>
-                        <th><a  href="#" data-toggle="modal" data-target="#myModal" >project.title</a></th>
-                        <th>project.startDate</th>
-                        <th>project.endDate</th>
-                        <th>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="${project.progress}" aria-valuemin="0" aria-valuemax="100" style="width: ${project.progress}%;">
-                                    ${project.progress}%
+                    <c:forEach var="project" items="${projectList}">
+                        <tr>
+                            <th>project.id</th>
+                            <th><a href="#" data-toggle="modal" data-target="#myModal">project.title</a></th>
+                            <th>project.startDate</th>
+                            <th>project.endDate</th>
+                            <th>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="${project.progress}"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: ${project.progress}%;">
+                                            ${project.progress}%
+                                    </div>
                                 </div>
-                            </div>
-                        </th>
-                    </tr>
+                            </th>
+                        </tr>
                     </c:forEach>
                     </tbody>
                 </table>
@@ -123,7 +119,8 @@
                             <th>10.10.16</th>
                             <th>
                                 <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                                         aria-valuemax="100" style="width: 60%;">
                                         60%
                                     </div>
                                 </div>
@@ -146,11 +143,12 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Exit</h4>
             </div>
             <div class="modal-body">
-                    <h5>Do you really want to exit? </h5>
+                <h5>Do you really want to exit? </h5>
             </div>
             <div class="modal-footer">
                 <form action="/logout" method="GET">

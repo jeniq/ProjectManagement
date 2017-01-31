@@ -8,6 +8,9 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * This class-interceptor returns authorized user to his main page instead opening login page.
+ */
 public class LoginPageInterceptor extends HandlerInterceptorAdapter {
 
     @Override
@@ -18,13 +21,14 @@ public class LoginPageInterceptor extends HandlerInterceptorAdapter {
             return true;
         } else if (member.getAccessType().getTypeName().equals(Constant.ADMINISTRATOR)) {
             response.sendRedirect(Page.ADMIN);
-        }else if (member.getAccessType().getTypeName().equals(Constant.CUSTOMER)){
+        } else if (member.getAccessType().getTypeName().equals(Constant.CUSTOMER)) {
             response.sendRedirect(Page.MAIN_CUSTOMER);
-        }else if (member.getAccessType().getTypeName().equals(Constant.EMPLOYEE)){
-            if (member.getPosition().getPosName().equals(Constant.PROJECT_MANAGER)){
-               request.getRequestDispatcher(Page.PROJECT_MANAGER).forward(request, response); // works with dispatcher only
+        } else if (member.getAccessType().getTypeName().equals(Constant.EMPLOYEE)) {
+            if (member.getPosition().getPosName().equals(Constant.PROJECT_MANAGER)) {
+                request.getRequestDispatcher(
+                        Page.PROJECT_MANAGER).forward(request, response); // works with dispatcher only
             }
-            response.sendRedirect(Page.MAIN_EMPLOYEE);
+            request.getRequestDispatcher(Page.MAIN_EMPLOYEE).forward(request, response);
         }
 
         return false;

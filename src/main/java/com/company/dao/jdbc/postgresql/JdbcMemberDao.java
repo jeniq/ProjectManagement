@@ -30,13 +30,16 @@ public class JdbcMemberDao implements MemberDao {
     private static final String POSITION_POS_NAME = "pos_name";
     private static final String PASSWORD = "password";
     private static final String TASK_ID = "task_id";
+    private static final String EMPLOYEE = "task_id";
 
     // Queries
     private static final String DELETE = "DELETE FROM \"ProjectManagement\".member WHERE id = :id";
     private static final String UPDATE = "UPDATE \"ProjectManagement\".member SET name = :name, surname = :surname, " +
             "email = :email, access_type = :type, position = :position, password = :password" +
             "WHERE id = :id";
-    private static final String SELECT_BY_ID = "SELECT * FROM \"ProjectManagement\".member WHERE id = :id";
+    private static final String SELECT_BY_ID = "SELECT * FROM \"ProjectManagement\".member m JOIN \"ProjectManagement\".position p ON m.position = p.id " +
+            "JOIN \"ProjectManagement\".access_type at ON m.access_type = at.id " +
+            "WHERE m.id = :id";
     private static final String SELECT_BY_EMAIL_PASSWORD = "SELECT * FROM \"ProjectManagement\".member m JOIN \"ProjectManagement\".access_type a ON m.access_type = a.id " +
             "LEFT JOIN \"ProjectManagement\".position p ON m.position = p.id " +
             "WHERE email = :email AND password = :password";
@@ -51,6 +54,9 @@ public class JdbcMemberDao implements MemberDao {
             "JOIN \"ProjectManagement\".position p ON m.position = p.id " +
             "JOIN \"ProjectManagement\".access_type at ON m.access_type = at.id " +
             "WHERE p.id = 1";
+    private static final String SELECT_AVAILABLE_EMPLOYEE = "SELECT * FROM \"ProjectManagement\".member m JOIN \"ProjectManagement\".access_type at ON m.access_type = at.id " +
+            "JOIN \"ProjectManagement\".position p ON m.position = p.id\n" +
+            "WHERE m.access_type = 2";
 
     private SimpleJdbcInsert insertMember;
     private NamedParameterJdbcTemplate jdbcTemplate;
@@ -95,8 +101,10 @@ public class JdbcMemberDao implements MemberDao {
     }
 
     @Override
-    public Member getMemberById(int id) {
-        return null;
+    public Member getMemberById(Long id) {
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue(ID, id);
+        return jdbcTemplate.queryForObject(SELECT_BY_ID, params, new MemberRowMapper());
     }
 
     @Override
@@ -137,6 +145,11 @@ public class JdbcMemberDao implements MemberDao {
     @Override
     public List<Member> getProjectManagerList() {
         return jdbcTemplate.query(SELECT_PROJECT_MANAGER, new MemberRowMapper());
+    }
+
+    @Override
+    public List<Member> getAvailableEmployeeList() {
+        return jdbcTemplate.query(SELECT_AVAILABLE_EMPLOYEE, new MemberRowMapper());
     }
 
     private static final class MemberRowMapper implements RowMapper<Member>{

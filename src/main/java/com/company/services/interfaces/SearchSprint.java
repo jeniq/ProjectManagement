@@ -12,4 +12,6 @@ public interface SearchSprint {
 
     // Search sprint(s) for member with 'id'
     List<Sprint> getSprintListByMember(long id);
+
+    Long getSprintNewId();
 }
