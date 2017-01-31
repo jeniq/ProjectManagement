@@ -2,7 +2,6 @@
 
 $(function () {
     $('#datetimepicker-1, #datetimepicker-2').datetimepicker({
-        // viewMode: 'years'
     });
     $('#datetimepicker-3').datetimepicker({
         viewMode: 'days'
@@ -64,6 +63,13 @@ $(function () {
         return false;
     });
 
+    $('.createMemberBtn').on('click', function (e) {
+        $.ajax($(e.currentTarget).attr('href')).done(function (d) {
+            $('#createMember').html(d).modal();
+        });
+        return false;
+    });
+
 });
 
 
@@ -94,31 +100,6 @@ function GetData() {
     }
 }
 
-function addNewProjectManager() {
-    var selind = document.getElementById("man").options.selectedIndex;
-    var val = document.getElementById('man').options[selind].value;
-    var text = document.getElementById("man").options[selind].text;
-
-    console.log(text);
-
-    $('#project_manager').text(text)
-}
-
-//----- Add new members to the task
-
-function addNewMember() {
-    // var val = document.getElementById('1').text;
-    // var vall = document.getElementById('1').value;
-
-    var member = document.getElementById("member").value;
-    // var chosen_member = document.getElementById("chosenMember").value;
-
-    $("#chosenMember").val(member);
-    console.log(member);
-
-
-}
-
 //----- Time Query for the task
 
 
@@ -134,14 +115,6 @@ function check() {
         console.log('UnChecked');
         $('#reguest_label, #reguest_btn').addClass('hide');
     }
-}
-
-
-//---- Deleting Project (Admin)
-
-function deleting() {
-    console.log("deleting");
-    $("#projectInfo").modal('hide');
 }
 
 function close() {

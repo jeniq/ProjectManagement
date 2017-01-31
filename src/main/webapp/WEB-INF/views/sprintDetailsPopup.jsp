@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!-- Modal -->
 <div class="modal-dialog">
     <div class="modal-content">
@@ -9,7 +10,7 @@
         <div class="modal-body">
 
             <!-- TASK -->
-            <c:forEach var="task" items="${sprint.taskList}">
+            <c:forEach var="task" items="${taskList}">
                 <div class="panel-task">
                     <div class="panel-heading task-heading">
                         <h4 class="panel-title">
@@ -85,33 +86,34 @@
                                     </th>
                                 </tr>
                                 <!-- STATUS -->
-                                <form>
                                     <tr>
                                         <th>
                                             <label>Status</label>
                                         </th>
                                         <th>
+                                            <form:form method="POST" action="updateTaskStatus${task.id}">
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                    <select id="status">
-                                                        <option value="1">In Process</option>
-                                                        <option value="2">Done</option>
+                                                    <select id="status" name = "status">
+                                                        <option value="false">In Process</option>
+                                                        <option value="true">Done</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                                     <p>
-                                                        <span class="label label-danger" id="to_do">To Do</span>
-                                                        <span class="label label-warning hide" id="on_progress">In Process</span>
-                                                        <span class="label label-success hide" id="done">Done</span>
+                                                        <c:if test="!${task.isDone}"><span
+                                                                class="label label-warning hide" id="on_progress">In Process</span></c:if>
+                                                        <c:if test="${task.isDone}"><span
+                                                                class="label label-success hide"
+                                                                id="done">Done</span></c:if>
                                                     </p>
                                                 </div>
                                             </div>
-                                            <button type="button" class="btn btn-primary upstat"
-                                                    onclick="GetData()">Update status
+                                            <button type="submit" class="btn btn-primary upstat">Update status
                                             </button>
+                                            </form:form>
                                         </th>
                                     </tr>
-                                </form>
                                 </tbody>
                             </table>
                         </div>
