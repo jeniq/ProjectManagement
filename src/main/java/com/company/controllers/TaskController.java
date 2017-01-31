@@ -32,7 +32,7 @@ public class TaskController {
 
 
     @RequestMapping(value = "/newTask", method = RequestMethod.GET)
-    public ModelAndView newTask(@ModelAttribute(Constant.MEMBER) Member member){
+    public ModelAndView newTask(@ModelAttribute(Constant.MEMBER) Member member) {
         ModelAndView modelAndView = new ModelAndView();
 
         List<Sprint> sprintList = sprintService.getSprintListByMember(member.getId());
@@ -48,7 +48,7 @@ public class TaskController {
     }
 
     @RequestMapping(value = "/addTask", method = RequestMethod.POST)
-    public String addTask(@ModelAttribute(Constant.TASK) Task task, HttpServletRequest request){
+    public String addTask(@ModelAttribute(Constant.TASK) Task task, HttpServletRequest request) {
         Member taskExecutor = memberService.getMember(Long.parseLong(request.getParameter(Constant.EMPLOYEE.toLowerCase())));
         task.setSprint(Long.parseLong(request.getParameter(Constant.SPRINT)));
 
@@ -58,9 +58,18 @@ public class TaskController {
     }
 
     @RequestMapping(value = "/task{id}", method = RequestMethod.GET)
-    public void taskDetails(@PathVariable Long id, HttpServletRequest request){
+    public void taskDetails(@PathVariable Long id, HttpServletRequest request) {
         Task task = taskService.getTaskById(id);
 
         request.setAttribute(Constant.TASK, task);
+    }
+
+    @RequestMapping(value = "/updateTaskStatus{id}", method = RequestMethod.POST)
+    public String updateTaskStatus(@PathVariable Long id, HttpServletRequest request) {
+        Task task = taskService.getTaskById(id);
+        task.setDone(Boolean.valueOf(request.getParameter(Constant.STATUS)));
+        taskService.edit(task);
+
+        return Page.REDIRECT_DEFAULT;
     }
 }
