@@ -38,7 +38,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" class="logOn" data-toggle="modal" data-target="#myModal1">Employee</a></li>
+                <li><a href="#" class="logOn" data-toggle="modal" data-target="#myModal1">Exit</a></li>
             </ul>
         </div>
     </div>
@@ -54,7 +54,7 @@
                 <!-- Default panel contents -->
                 <div class="panel-heading">Project Name</div>
                 <div class="panel-body">
-                    <p>Click on Task to see more info about it & tasks</p>
+                    <p>Click on Task to see more info</p>
                 </div>
 
                 <!-- Table -->
@@ -62,25 +62,20 @@
                     <thead>
                     <tr>
                         <th>Sprint</th>
-                        <th>Start Date</th>
-                        <th>End Date</th>
                         <th>Progress</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="task" items="${taskList}">
+                    <c:forEach var="sprint" items="${sprintList}">
                         <tr>
-                            <th><a href="/task${task.id}" data-toggle="modal" data-target="#myModal"
-                                   class="details">${task.title}</a></th>
-                            <th>start date</th>
-                            <th>end date</th>
+                            <th><a href="/sprint${sprint.id}" data-toggle="modal" data-target="#myModal"
+                                   class="details">${sprint.id}</a></th>
                             <th>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="${task.progress}"
                                          aria-valuemin="0" aria-valuemax="100" style="width: ${task.progress}%;">
-                                            ${task.progress}%
+                                            ${sprint.progress}%
                                     </div>
-                                </div>
                             </th>
                         </tr>
                     </c:forEach>
@@ -94,6 +89,10 @@
 
 
 <!------------------------------------------- Modals ------------------------------------------->
+<div class="modal fade" id="sprintDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+
+</div>
+
 
 <!-- LOG_OUT -->
 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

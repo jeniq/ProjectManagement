@@ -52,10 +52,10 @@ public class SprintController {
     }
 
     @RequestMapping(value = "/sprint{id}", method = RequestMethod.GET)
-    public void sprintDetails(@PathVariable long id, HttpServletRequest request) {
+    public ModelAndView sprintDetails(@PathVariable long id) {
         List<Task> taskList = taskService.getTaskListBySprint(id);
 
-        request.setAttribute(Constant.TASK_LIST, taskList);
+        return new ModelAndView(Page.SPRINT_DETAILS_POPUP, Constant.TASK_LIST, taskList);
     }
 
     @RequestMapping(value = "/sprint{id}_popup", method = RequestMethod.GET)

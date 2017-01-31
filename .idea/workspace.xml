@@ -36,268 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="error.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error.jsp">
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="83" selection-start-line="0" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="133" column="21" selection-start-line="133" selection-start-column="21" selection-end-line="133" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createSprintPopup.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createSprintPopup.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebAppConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/config/WebAppConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="79" column="9" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3309#3310#0" expanded="true" />
-                <element signature="e#3352#3353#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/TaskController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Initializer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/config/Initializer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MemberService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/impls/MemberService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="22" column="15" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
-              <folding>
-                <element signature="e#641#642#0" expanded="true" />
-                <element signature="e#691#692#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JdbcMemberDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/jdbc/postgresql/JdbcMemberDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
-              <folding>
-                <marker date="1485818877272" expanded="true" signature="1836:2047" ph="SELECT * FRO... member" />
-                <marker date="1485818877272" expanded="true" signature="1836:2051" ph="SELECT * FRO... member" />
-                <marker date="1485818877272" expanded="true" signature="1836:2057" ph="SELECT * FRO... member" />
-                <marker date="1485818877272" expanded="true" signature="2120:2334" ph="SELECT * FRO... member" />
-                <marker date="1485818877272" expanded="true" signature="2120:2373" ph="SELECT * FRO... member" />
-                <marker date="1485818877272" expanded="true" signature="2808:2867" ph="SELECT * FRO... task_executor" />
-                <marker date="1485818877272" expanded="true" signature="2808:2884" ph="SELECT * FRO... task_executor" />
-                <marker date="1485818877272" expanded="true" signature="2808:2912" ph="SELECT * FRO... task_executor" />
-                <marker date="1485818877272" expanded="true" signature="2808:2935" ph="SELECT * FRO... task_executor" />
-                <marker date="1485818877272" expanded="true" signature="2808:3106" ph="SELECT * FRO... task_executor" />
-                <marker date="1485818877272" expanded="true" signature="2808:3125" ph="SELECT * FRO... task_executor" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="64" column="9" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JdbcTaskDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/jdbc/postgresql/JdbcTaskDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
-              <folding>
-                <marker date="1485823183271" expanded="true" signature="1536:1716" ph="INSERT INTO \&quot;ProjectManagement\&quot;.task... " />
-                <marker date="1485823183271" expanded="true" signature="1770:1849" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project_executor... " />
-                <marker date="1485823183271" expanded="true" signature="1909:1972" ph="SELECT * FRO... task" />
-                <marker date="1485823183271" expanded="true" signature="2023:2186" ph="SELECT COUNT... task" />
-                <marker date="1485823183271" expanded="true" signature="2023:2206" ph="SELECT COUNT... task" />
-                <marker date="1485823183271" expanded="true" signature="2268:2444" ph="SELECT * FRO... task_executor" />
-                <marker date="1485823183271" expanded="true" signature="2496:2552" ph="SELECT last_... task_id_seq" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createTaskPopup.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createTaskPopup.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="78" column="50" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Task.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/entities/Task.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="16" column="32" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createProjectPopup.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createProjectPopup.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="33" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JdbcProjectDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/jdbc/postgresql/JdbcProjectDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="105" column="89" selection-start-line="103" selection-start-column="7" selection-end-line="105" selection-end-column="89" />
-              <folding>
-                <marker date="1485766373775" expanded="true" signature="1273:1376" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project... " />
-                <marker date="1485766373775" expanded="true" signature="1432:1516" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project_manager... " />
-                <marker date="1485766373775" expanded="true" signature="1556:1612" ph="DELETE FROM " />
-                <marker date="1485766373775" expanded="true" signature="1698:1741" ph="SELECT * FRO... project" />
-                <marker date="1485766373775" expanded="true" signature="1698:1756" ph="SELECT * FRO... project" />
-                <marker date="1485766373775" expanded="true" signature="1806:1853" ph="SELECT p.id,... " />
-                <marker date="1485766373775" expanded="true" signature="1806:1873" ph="SELECT p.id,... " />
-                <marker date="1485766373775" expanded="true" signature="1806:1900" ph="SELECT p.id,... project_customer" />
-                <marker date="1485766373775" expanded="true" signature="1806:1980" ph="SELECT p.id,... project_customer" />
-                <marker date="1485766373775" expanded="true" signature="1806:2501" ph="SELECT p.id,... " />
-                <marker date="1485766373775" expanded="true" signature="1996:2169" ph="SELECT p.id,... project_manager" />
-                <marker date="1485766373775" expanded="true" signature="2185:2501" ph="SELECT p.id,... task_executor" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthenticationService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/impls/AuthenticationService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskService.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/impls/TaskService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="57" column="6" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
-              <folding>
-                <element signature="e#1434#1435#0" expanded="true" />
-                <element signature="e#1487#1488#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginPageInterceptor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/filters/LoginPageInterceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Security.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/interfaces/Security.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainAdmin.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainAdmin.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainCustomer.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainCustomer.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainEmployee.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainEmployee.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+            <state relative-caret-position="221">
+              <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -306,18 +49,62 @@
       <file leaf-file-name="mainProjectManager.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainProjectManager.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
+            <state relative-caret-position="-34">
+              <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="projectListPopup.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/projectListPopup.jsp">
+      <file leaf-file-name="createTaskPopup.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createTaskPopup.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="92" column="22" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createProjectPopup.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createProjectPopup.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JdbcProjectDao.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/jdbc/postgresql/JdbcProjectDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="102" column="43" selection-start-line="102" selection-start-column="43" selection-end-line="102" selection-end-column="43" />
+              <folding>
+                <marker date="1485828718520" expanded="true" signature="1328:1431" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project... " />
+                <marker date="1485828718520" expanded="true" signature="1487:1571" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project_manager... " />
+                <marker date="1485828718520" expanded="true" signature="1611:1667" ph="DELETE FROM " />
+                <marker date="1485828718520" expanded="true" signature="1753:1796" ph="SELECT * FRO... project" />
+                <marker date="1485828718520" expanded="true" signature="1753:1811" ph="SELECT * FRO... project" />
+                <marker date="1485828718520" expanded="true" signature="1861:1908" ph="SELECT p.id,... " />
+                <marker date="1485828718520" expanded="true" signature="1861:1928" ph="SELECT p.id,... " />
+                <marker date="1485828718520" expanded="true" signature="1861:1955" ph="SELECT p.id,... project_customer" />
+                <marker date="1485828718520" expanded="true" signature="1861:2035" ph="SELECT p.id,... project_customer" />
+                <marker date="1485828718520" expanded="true" signature="1861:2556" ph="SELECT p.id,... " />
+                <marker date="1485828718520" expanded="true" signature="2051:2224" ph="SELECT p.id,... project_manager" />
+                <marker date="1485828718520" expanded="true" signature="2240:2556" ph="SELECT p.id,... task_executor" />
+                <marker date="1485828718520" expanded="true" signature="2691:2776" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project_customer... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProjectDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/interfaces/ProjectDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="131">
+              <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -326,8 +113,169 @@
       <file leaf-file-name="sprintDetailsPopup.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sprintDetailsPopup.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+            <state relative-caret-position="1853">
+              <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProjectController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/ProjectController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="172">
+              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditProject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/interfaces/EditProject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="73" selection-start-line="5" selection-start-column="73" selection-end-line="5" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchMember.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/interfaces/SearchMember.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JdbcMemberDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/jdbc/postgresql/JdbcMemberDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="60" column="76" selection-start-line="60" selection-start-column="76" selection-end-line="60" selection-end-column="76" />
+              <folding>
+                <element signature="e#6806#6807#0" expanded="true" />
+                <element signature="e#6892#6893#0" expanded="true" />
+                <marker date="1485828327634" expanded="true" signature="1836:2047" ph="SELECT * FRO... member" />
+                <marker date="1485828327634" expanded="true" signature="1836:2051" ph="SELECT * FRO... member" />
+                <marker date="1485828327634" expanded="true" signature="1836:2057" ph="SELECT * FRO... member" />
+                <marker date="1485828327634" expanded="true" signature="2120:2334" ph="SELECT * FRO... member" />
+                <marker date="1485828327634" expanded="true" signature="2120:2373" ph="SELECT * FRO... member" />
+                <marker date="1485828327634" expanded="true" signature="2808:2867" ph="SELECT * FRO... task_executor" />
+                <marker date="1485828327634" expanded="true" signature="2808:2884" ph="SELECT * FRO... task_executor" />
+                <marker date="1485828327634" expanded="true" signature="2808:2912" ph="SELECT * FRO... task_executor" />
+                <marker date="1485828327634" expanded="true" signature="2808:2935" ph="SELECT * FRO... task_executor" />
+                <marker date="1485828327634" expanded="true" signature="2808:3106" ph="SELECT * FRO... task_executor" />
+                <marker date="1485828327634" expanded="true" signature="2808:3125" ph="SELECT * FRO... task_executor" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MemberService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/impls/MemberService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+              <folding>
+                <element signature="e#641#642#0" expanded="true" />
+                <element signature="e#691#692#0" expanded="true" />
+                <element signature="e#1350#1351#0" expanded="true" />
+                <element signature="e#1400#1401#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProjectService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/impls/ProjectService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="54" column="69" selection-start-line="54" selection-start-column="69" selection-end-line="54" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MemberDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/interfaces/MemberDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PositionDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/interfaces/PositionDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constant.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/Constant.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="67">
+              <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mainEmployee.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainEmployee.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="481">
+              <caret line="91" column="41" selection-start-line="91" selection-start-column="41" selection-end-line="91" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SprintController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/SprintController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="57" column="6" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TaskService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/impls/TaskService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SprintService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/impls/SprintService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="65" column="32" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainPageController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/MainPageController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -361,53 +309,53 @@
         <option value="$PROJECT_DIR$/src/main/java/com/company/services/interfaces/SearchExecutor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/entities/Member.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/entities/Project.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/services/interfaces/EditProject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/services/impls/ProjectService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/dao/jdbc/postgresql/JdbcProjectDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/dao/interfaces/ProjectDao.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/script.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/services/interfaces/SearchMember.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/entities/Sprint.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/dao/interfaces/SprintDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/services/interfaces/SearchSprint.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/services/interfaces/SearchTask.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/services/impls/SprintService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/entities/Task.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/dao/jdbc/postgresql/JdbcSprintDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/MainPageController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/ProjectController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/SprintController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/services/interfaces/EditTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/dao/interfaces/TaskDao.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/errors.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/Page.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/ExceptionHandlingController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/Constant.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/services/impls/AuthenticationService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/services/interfaces/Security.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/filters/LoginPageInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/TaskController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/services/impls/MemberService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/dao/interfaces/MemberDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/dao/jdbc/postgresql/JdbcMemberDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/config/Initializer.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createProjectPopup.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createSprintPopup.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainAdmin.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainCustomer.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainEmployee.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainProjectManager.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/projectListPopup.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sprintDetailsPopup.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createTaskPopup.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/dao/jdbc/postgresql/JdbcTaskDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/config/WebAppConfig.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/services/impls/TaskService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sprintDetailsPopup.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/services/impls/SprintService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/MainPageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/SprintController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/script.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainEmployee.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/Constant.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/services/interfaces/SearchMember.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/services/impls/MemberService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/dao/interfaces/MemberDao.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createTaskPopup.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/dao/jdbc/postgresql/JdbcMemberDao.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createProjectPopup.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/ProjectController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/services/interfaces/EditProject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/services/impls/ProjectService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/dao/interfaces/ProjectDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/dao/jdbc/postgresql/JdbcProjectDao.java" />
       </list>
     </option>
   </component>
@@ -608,6 +556,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectManager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectManager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1576,12 +1554,12 @@
       <workItem from="1485101667600" duration="32720000" />
       <workItem from="1485192499951" duration="11276000" />
       <workItem from="1485278019167" duration="5806000" />
-      <workItem from="1485284141775" duration="120182000" />
+      <workItem from="1485284141775" duration="123571000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="331455000" />
+    <option name="totallyTimeSpent" value="334844000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1687,67 +1665,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/jdbc/postgresql/JdbcSprintDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="28" column="84" selection-start-line="28" selection-start-column="84" selection-end-line="28" selection-end-column="84" />
-          <folding>
-            <marker date="1485808335102" expanded="true" signature="977:1054" ph="INSERT INTO \&quot;ProjectManagement\&quot;.sprint... " />
-            <marker date="1485808335102" expanded="true" signature="1111:1178" ph="SELECT * FRO... sprint" />
-            <marker date="1485808335102" expanded="true" signature="1111:1181" ph="SELECT * FRO... sprint" />
-            <marker date="1485808335102" expanded="true" signature="1237:1273" ph="SELECT s.id " />
-            <marker date="1485808335102" expanded="true" signature="1237:1302" ph="SELECT s.id sprint" />
-            <marker date="1485808335102" expanded="true" signature="1237:1475" ph="SELECT s.id,... sprint" />
-            <marker date="1485808335102" expanded="true" signature="1237:1727" ph="SELECT s.id,... " />
-            <marker date="1485808335102" expanded="true" signature="1500:1727" ph="SELECT s.id,... project" />
-            <marker date="1485808335102" expanded="true" signature="1780:1838" ph="SELECT * FRO... sprint" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/4.3.5.RELEASE/spring-tx-4.3.5.RELEASE-sources.jar!/org/springframework/transaction/annotation/Transactional.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-980">
-          <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#7847#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/interfaces/TaskDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/impls/ProjectService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/interfaces/AlterEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/interfaces/Communication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1756,23 +1673,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/interfaces/EditProject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/interfaces/Load.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/interfaces/SearchMember.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
@@ -1848,32 +1749,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/Constant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/ExceptionHandlingController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="31" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="31" />
           <folding>
-            <element signature="e#393#394#0" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#565#566#0" expanded="true" />
-            <element signature="e#654#655#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="false" />
+            <element signature="e#482#483#0" expanded="false" />
+            <element signature="e#565#566#0" expanded="false" />
+            <element signature="e#654#655#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/MainPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="23" column="19" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1885,36 +1770,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/SprintController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="36" column="35" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="91" selection-start-line="7" selection-start-column="91" selection-end-line="7" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/ProjectController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="80" column="11" selection-start-line="80" selection-start-column="10" selection-end-line="80" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/interfaces/MemberDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1935,63 +1794,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/impls/MemberService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="22" column="15" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
-          <folding>
-            <element signature="e#641#642#0" expanded="true" />
-            <element signature="e#691#692#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/jdbc/postgresql/JdbcProjectDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="105" column="89" selection-start-line="103" selection-start-column="7" selection-end-line="105" selection-end-column="89" />
-          <folding>
-            <marker date="1485766373775" expanded="true" signature="1273:1376" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project... " />
-            <marker date="1485766373775" expanded="true" signature="1432:1516" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project_manager... " />
-            <marker date="1485766373775" expanded="true" signature="1556:1612" ph="DELETE FROM " />
-            <marker date="1485766373775" expanded="true" signature="1698:1741" ph="SELECT * FRO... project" />
-            <marker date="1485766373775" expanded="true" signature="1698:1756" ph="SELECT * FRO... project" />
-            <marker date="1485766373775" expanded="true" signature="1806:1853" ph="SELECT p.id,... " />
-            <marker date="1485766373775" expanded="true" signature="1806:1873" ph="SELECT p.id,... " />
-            <marker date="1485766373775" expanded="true" signature="1806:1900" ph="SELECT p.id,... project_customer" />
-            <marker date="1485766373775" expanded="true" signature="1806:1980" ph="SELECT p.id,... project_customer" />
-            <marker date="1485766373775" expanded="true" signature="1806:2501" ph="SELECT p.id,... " />
-            <marker date="1485766373775" expanded="true" signature="1996:2169" ph="SELECT p.id,... project_manager" />
-            <marker date="1485766373775" expanded="true" signature="2185:2501" ph="SELECT p.id,... task_executor" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/filters/LoginPageInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/jdbc/postgresql/JdbcMemberDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
-          <folding>
-            <marker date="1485818877272" expanded="true" signature="1836:2047" ph="SELECT * FRO... member" />
-            <marker date="1485818877272" expanded="true" signature="1836:2051" ph="SELECT * FRO... member" />
-            <marker date="1485818877272" expanded="true" signature="1836:2057" ph="SELECT * FRO... member" />
-            <marker date="1485818877272" expanded="true" signature="2120:2334" ph="SELECT * FRO... member" />
-            <marker date="1485818877272" expanded="true" signature="2120:2373" ph="SELECT * FRO... member" />
-            <marker date="1485818877272" expanded="true" signature="2808:2867" ph="SELECT * FRO... task_executor" />
-            <marker date="1485818877272" expanded="true" signature="2808:2884" ph="SELECT * FRO... task_executor" />
-            <marker date="1485818877272" expanded="true" signature="2808:2912" ph="SELECT * FRO... task_executor" />
-            <marker date="1485818877272" expanded="true" signature="2808:2935" ph="SELECT * FRO... task_executor" />
-            <marker date="1485818877272" expanded="true" signature="2808:3106" ph="SELECT * FRO... task_executor" />
-            <marker date="1485818877272" expanded="true" signature="2808:3125" ph="SELECT * FRO... task_executor" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2035,64 +1842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainEmployee.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainProjectManager.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/projectListPopup.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sprintDetailsPopup.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createProjectPopup.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="33" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/entities/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createTaskPopup.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="78" column="50" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
@@ -2130,7 +1879,7 @@
         <state relative-caret-position="259">
           <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2155,13 +1904,241 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/entities/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/jdbc/postgresql/JdbcSprintDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-799">
+          <caret line="28" column="84" selection-start-line="28" selection-start-column="84" selection-end-line="28" selection-end-column="84" />
+          <folding>
+            <marker date="1485808335102" expanded="true" signature="977:1054" ph="INSERT INTO \&quot;ProjectManagement\&quot;.sprint... " />
+            <marker date="1485808335102" expanded="true" signature="1111:1178" ph="SELECT * FRO... sprint" />
+            <marker date="1485808335102" expanded="true" signature="1111:1181" ph="SELECT * FRO... sprint" />
+            <marker date="1485808335102" expanded="true" signature="1237:1273" ph="SELECT s.id " />
+            <marker date="1485808335102" expanded="true" signature="1237:1302" ph="SELECT s.id sprint" />
+            <marker date="1485808335102" expanded="true" signature="1237:1475" ph="SELECT s.id,... sprint" />
+            <marker date="1485808335102" expanded="true" signature="1237:1727" ph="SELECT s.id,... " />
+            <marker date="1485808335102" expanded="true" signature="1500:1727" ph="SELECT s.id,... project" />
+            <marker date="1485808335102" expanded="true" signature="1780:1838" ph="SELECT * FRO... sprint" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/projectListPopup.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/impls/TaskService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
+        <state relative-caret-position="425">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/impls/SprintService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="65" column="32" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/MainPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/SprintController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
           <caret line="57" column="6" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainEmployee.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="91" column="41" selection-start-line="91" selection-start-column="41" selection-end-line="91" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sprintDetailsPopup.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1853">
+          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/Constant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainProjectManager.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createTaskPopup.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="92" column="22" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/interfaces/SearchMember.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/jdbc/postgresql/JdbcMemberDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="60" column="76" selection-start-line="60" selection-start-column="76" selection-end-line="60" selection-end-column="76" />
           <folding>
-            <element signature="e#1434#1435#0" expanded="true" />
-            <element signature="e#1487#1488#0" expanded="true" />
+            <element signature="e#6806#6807#0" expanded="true" />
+            <element signature="e#6892#6893#0" expanded="true" />
+            <marker date="1485828327634" expanded="true" signature="1836:2047" ph="SELECT * FRO... member" />
+            <marker date="1485828327634" expanded="true" signature="1836:2051" ph="SELECT * FRO... member" />
+            <marker date="1485828327634" expanded="true" signature="1836:2057" ph="SELECT * FRO... member" />
+            <marker date="1485828327634" expanded="true" signature="2120:2334" ph="SELECT * FRO... member" />
+            <marker date="1485828327634" expanded="true" signature="2120:2373" ph="SELECT * FRO... member" />
+            <marker date="1485828327634" expanded="true" signature="2808:2867" ph="SELECT * FRO... task_executor" />
+            <marker date="1485828327634" expanded="true" signature="2808:2884" ph="SELECT * FRO... task_executor" />
+            <marker date="1485828327634" expanded="true" signature="2808:2912" ph="SELECT * FRO... task_executor" />
+            <marker date="1485828327634" expanded="true" signature="2808:2935" ph="SELECT * FRO... task_executor" />
+            <marker date="1485828327634" expanded="true" signature="2808:3106" ph="SELECT * FRO... task_executor" />
+            <marker date="1485828327634" expanded="true" signature="2808:3125" ph="SELECT * FRO... task_executor" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createProjectPopup.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/ProjectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/interfaces/EditProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="73" selection-start-line="5" selection-start-column="73" selection-end-line="5" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/impls/MemberService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+          <folding>
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#691#692#0" expanded="true" />
+            <element signature="e#1350#1351#0" expanded="true" />
+            <element signature="e#1400#1401#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/services/impls/ProjectService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="54" column="69" selection-start-line="54" selection-start-column="69" selection-end-line="54" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/interfaces/MemberDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/interfaces/PositionDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/interfaces/ProjectDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/jdbc/postgresql/JdbcProjectDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="102" column="43" selection-start-line="102" selection-start-column="43" selection-end-line="102" selection-end-column="43" />
+          <folding>
+            <marker date="1485828718520" expanded="true" signature="1328:1431" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project... " />
+            <marker date="1485828718520" expanded="true" signature="1487:1571" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project_manager... " />
+            <marker date="1485828718520" expanded="true" signature="1611:1667" ph="DELETE FROM " />
+            <marker date="1485828718520" expanded="true" signature="1753:1796" ph="SELECT * FRO... project" />
+            <marker date="1485828718520" expanded="true" signature="1753:1811" ph="SELECT * FRO... project" />
+            <marker date="1485828718520" expanded="true" signature="1861:1908" ph="SELECT p.id,... " />
+            <marker date="1485828718520" expanded="true" signature="1861:1928" ph="SELECT p.id,... " />
+            <marker date="1485828718520" expanded="true" signature="1861:1955" ph="SELECT p.id,... project_customer" />
+            <marker date="1485828718520" expanded="true" signature="1861:2035" ph="SELECT p.id,... project_customer" />
+            <marker date="1485828718520" expanded="true" signature="1861:2556" ph="SELECT p.id,... " />
+            <marker date="1485828718520" expanded="true" signature="2051:2224" ph="SELECT p.id,... project_manager" />
+            <marker date="1485828718520" expanded="true" signature="2240:2556" ph="SELECT p.id,... task_executor" />
+            <marker date="1485828718520" expanded="true" signature="2691:2776" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project_customer... " />
           </folding>
         </state>
       </provider>

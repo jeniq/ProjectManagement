@@ -1,35 +1,3 @@
-// $('#myModal').on('shown.bs.modal', function () {
-//   $('#myInput').focus()
-// })
-
-// $(function () {
-//   $('[data-toggle="tooltip"]').tooltip()
-// })
-//
-
-// jQuery(document).ready(function(){
-//     console.log("hello");
-//     alert("hello");
-// });
-
-//--- Drag & Drop
-
-function allowDrop(ev) {
-    ev.preventDefault();
-}
-
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-    document.getElementById(data).classList.remove("label-default");
-    document.getElementById(data).classList.add("label-success");
-}
-
 //--- DateTimePicker
 
 $(function () {
@@ -48,14 +16,14 @@ $(function () {
 
 //--- More info about project
 
-$(function(){
+$(function () {
     $("[data-toggle=popover]").popover({
-        html : true,
-        content: function() {
+        html: true,
+        content: function () {
             var content = $(this).attr("data-popover-content");
             return $(content).children(".popover-body").html();
         },
-        title: function() {
+        title: function () {
             var title = $(this).attr("data-popover-content");
             return $(title).children(".popover-heading").html();
         }
@@ -70,7 +38,7 @@ $(function(){
 
     $('.sprint-details').on('click', '.details', function (e) {
         $.ajax($(e.currentTarget).attr('href')).done(function (d) {
-            $('#myModal').html(d).modal();
+            $('#sprintDetails').html(d).modal();
         });
         return false;
     });
@@ -99,26 +67,24 @@ $(function(){
 });
 
 
-
-
 //---- Select status for task
 
 function GetData() {
     var selind = document.getElementById("status").options.selectedIndex;
-    var val= document.getElementById("status").options[selind].value;
+    var val = document.getElementById("status").options[selind].value;
     // var text = document.getElementById("status").options[selind].text;
     console.log("Value= " + val);
 
     var inProgress = 1,
         done = 2;
 
-    if(val==inProgress){
+    if (val == inProgress) {
         // console.log('on_progress');
         // console.log('Sum' + "=" + val+inProgress);
         $("#to_do").addClass("hide");
         $("#done").addClass("hide");
         $("#on_progress").removeClass("hide");
-    } else if (val==done){
+    } else if (val == done) {
         console.log('done');
         $("#to_do").addClass("hide");
         $("#on_progress").addClass("hide");
@@ -140,7 +106,7 @@ function addNewProjectManager() {
 
 //----- Add new members to the task
 
-function addNewMember(){
+function addNewMember() {
     // var val = document.getElementById('1').text;
     // var vall = document.getElementById('1').value;
 
@@ -156,12 +122,12 @@ function addNewMember(){
 //----- Time Query for the task
 
 
-function check(){
+function check() {
     var box = document.getElementById("checkbox").checked;
     var tr = new Boolean(true);
     console.log(box);
 
-    if(box == tr){
+    if (box == tr) {
         console.log('Checked');
         $('#reguest_label, #reguest_btn').removeClass('hide');
     } else {
@@ -171,20 +137,19 @@ function check(){
 }
 
 
-
 //---- Deleting Project (Admin)
 
-function deleting(){
+function deleting() {
     console.log("deleting");
     $("#projectInfo").modal('hide');
 }
 
-function close(){
+function close() {
     console.log("Cancel");
     $("#projectInfo").modal('show');
 }
 
-function success(){
+function success() {
     console.log("Success!");
     $("#projectInfo").modal('hide');
 }

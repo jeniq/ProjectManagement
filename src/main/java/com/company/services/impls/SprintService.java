@@ -69,6 +69,6 @@ public class SprintService implements SearchSprint, AlterEntity<Sprint>, SprintI
             }
         }
 
-        return doneTask/taskList.size()*100;
+        return taskList.size() == 0 ? 0 : doneTask/taskList.size()*100;
     }
 }

@@ -87,7 +87,7 @@
                 <div class="members">
                     <select name="employee">
                         <c:forEach var="member" items="${employeeList}">
-                            <option value="${member.id}">${member.name} ${member.surname}</option>
+                            <option value="${member.id}">${member.name} ${member.surname} ${member.position.posName}</option>
                         </c:forEach>
                     </select>
                 </div>

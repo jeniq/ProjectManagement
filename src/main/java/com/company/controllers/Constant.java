@@ -9,6 +9,7 @@ public final class Constant {
     public static final String ADMINISTRATOR = "Administrator";
     // C
     public static final String CUSTOMER = "Customer";
+    public static final String CUSTOMER_LIST = "customerList";
     // E
     public static final String EMPLOYEE = "Employee";
     public static final String EMPLOYEE_LIST = "employeeList";

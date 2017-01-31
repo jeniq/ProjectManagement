@@ -57,6 +57,9 @@ public class JdbcMemberDao implements MemberDao {
     private static final String SELECT_AVAILABLE_EMPLOYEE = "SELECT * FROM \"ProjectManagement\".member m JOIN \"ProjectManagement\".access_type at ON m.access_type = at.id " +
             "JOIN \"ProjectManagement\".position p ON m.position = p.id\n" +
             "WHERE m.access_type = 2";
+    private static final String SELECT_CUSTOMER_LIST = "SELECT * FROM \"ProjectManagement\".member m JOIN \"ProjectManagement\".access_type at ON m.access_type = at.id " +
+            "JOIN \"ProjectManagement\".position p ON m.position = p.id\n" +
+            "WHERE m.access_type = 3";
 
     private SimpleJdbcInsert insertMember;
     private NamedParameterJdbcTemplate jdbcTemplate;
@@ -150,6 +153,11 @@ public class JdbcMemberDao implements MemberDao {
     @Override
     public List<Member> getAvailableEmployeeList() {
         return jdbcTemplate.query(SELECT_AVAILABLE_EMPLOYEE, new MemberRowMapper());
+    }
+
+    @Override
+    public List<Member> getCustomerList() {
+        return jdbcTemplate.query(SELECT_CUSTOMER_LIST, new MemberRowMapper());
     }
 
     private static final class MemberRowMapper implements RowMapper<Member>{

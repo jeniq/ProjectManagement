@@ -11,6 +11,14 @@
         </div>
         <form:form method="POST" commandName="project" action="addProject">
             <div class="modal-body">
+                <label>Customer</label>
+                <select name="customer">
+                    <c:forEach var="customer" items="${customerList}">
+                        <option value="${customer.id}">${customer.name} ${customer.surname}</option>
+                    </c:forEach>
+                </select>
+                <br/>
+                <br/>
                 <label>Name</label>
                 <form:input type='text'
                             path="title"

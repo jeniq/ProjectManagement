@@ -9,4 +9,5 @@ public interface SearchMember {
     List<Member> getMemberList();
     List<Member> getProjectManagerList();
     List<Member> getAvailableEmployeeList();
+    List<Member> getCustomerList();
 }

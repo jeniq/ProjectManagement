@@ -47,6 +47,11 @@ public class MemberService implements SearchMember, Load, SearchExecutor {
     }
 
     @Override
+    public List<Member> getCustomerList() {
+        return memberDao.getCustomerList();
+    }
+
+    @Override
     public Integer getEmployeeLoadPerWeek(Member member, Date date) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
