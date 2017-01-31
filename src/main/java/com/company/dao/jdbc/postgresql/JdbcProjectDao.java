@@ -38,9 +38,9 @@ public class JdbcProjectDao implements ProjectDao {
     private static final String UPDATE  = "UPDATE \"ProjectManagement\".project SET title = :title, start_dt = :start_dt, end_dt = :end_dt, progress = :progress " +
             "WHERE id = :id";
     private static final String SELECT_BY_ID  = "SELECT * FROM \"ProjectManagement\".project WHERE id = :id";
-    private static final String SELECT_BY_USER_ID = "SELECT p.id, p.title, p.start_dt, p.end_dt FROM \"ProjectManagement\".project_customer pc JOIN \"ProjectManagement\".project p ON p.id = pc.project_id WHERE customer_id = :id " +
-    "UNION SELECT p.id, p.title, p.start_dt, p.end_dt FROM \"ProjectManagement\".project_manager pm JOIN \"ProjectManagement\".project p ON p.id = pm.project_id WHERE employee_id = :id " +
-    "UNION SELECT p.id, p.title, p.start_dt, p.end_dt FROM \"ProjectManagement\".task_executor tex " +
+    private static final String SELECT_BY_USER_ID = "SELECT p.id, p.title, p.start_dt, p.end_dt, p.progress FROM \"ProjectManagement\".project_customer pc JOIN \"ProjectManagement\".project p ON p.id = pc.project_id WHERE customer_id = :id " +
+    "UNION SELECT p.id, p.title, p.start_dt, p.end_dt, p.progress FROM \"ProjectManagement\".project_manager pm JOIN \"ProjectManagement\".project p ON p.id = pm.project_id WHERE employee_id = :id " +
+    "UNION SELECT p.id, p.title, p.start_dt, p.end_dt, p.progress FROM \"ProjectManagement\".task_executor tex " +
     "JOIN \"ProjectManagement\".task t ON tex.task_id  = t.id " +
     "JOIN \"ProjectManagement\".sprint s ON t.sprint = s.id " +
     "JOIN \"ProjectManagement\".project p ON s.project = p.id " +

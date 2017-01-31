@@ -39,24 +39,24 @@
       <file leaf-file-name="JdbcProjectDao.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/jdbc/postgresql/JdbcProjectDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="137" column="50" selection-start-line="137" selection-start-column="50" selection-end-line="137" selection-end-column="50" />
+            <state relative-caret-position="-4">
+              <caret line="42" column="65" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
               <folding>
-                <marker date="1485873494355" expanded="true" signature="1438:1541" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project... " />
-                <marker date="1485873494355" expanded="true" signature="1603:1687" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project_manager... " />
-                <marker date="1485873494355" expanded="true" signature="1733:1789" ph="DELETE FROM " />
-                <marker date="1485873494355" expanded="true" signature="1835:1952" ph="UPDATE \&quot;Pro... " />
-                <marker date="1485873494355" expanded="true" signature="1835:1984" ph="UPDATE \&quot;Pro... " />
-                <marker date="1485873494355" expanded="true" signature="2036:2079" ph="SELECT * FRO... project" />
-                <marker date="1485873494355" expanded="true" signature="2036:2094" ph="SELECT * FRO... project" />
-                <marker date="1485873494355" expanded="true" signature="2150:2197" ph="SELECT p.id,... " />
-                <marker date="1485873494355" expanded="true" signature="2150:2217" ph="SELECT p.id,... " />
-                <marker date="1485873494355" expanded="true" signature="2150:2244" ph="SELECT p.id,... project_customer" />
-                <marker date="1485873494355" expanded="true" signature="2150:2324" ph="SELECT p.id,... project_customer" />
-                <marker date="1485873494355" expanded="true" signature="2150:2845" ph="SELECT p.id,... " />
-                <marker date="1485873494355" expanded="true" signature="2340:2513" ph="SELECT p.id,... project_manager" />
-                <marker date="1485873494355" expanded="true" signature="2529:2845" ph="SELECT p.id,... task_executor" />
-                <marker date="1485873494355" expanded="true" signature="2992:3077" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project_customer... " />
+                <marker date="1485873649374" expanded="true" signature="1438:1541" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project... " />
+                <marker date="1485873649374" expanded="true" signature="1603:1687" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project_manager... " />
+                <marker date="1485873649374" expanded="true" signature="1733:1789" ph="DELETE FROM " />
+                <marker date="1485873649374" expanded="true" signature="1835:1952" ph="UPDATE \&quot;Pro... " />
+                <marker date="1485873649374" expanded="true" signature="1835:1984" ph="UPDATE \&quot;Pro... " />
+                <marker date="1485873649374" expanded="true" signature="2036:2079" ph="SELECT * FRO... project" />
+                <marker date="1485873649374" expanded="true" signature="2036:2094" ph="SELECT * FRO... project" />
+                <marker date="1485873649374" expanded="true" signature="2150:2209" ph="SELECT p.id,... " />
+                <marker date="1485873649374" expanded="true" signature="2150:2229" ph="SELECT p.id,... " />
+                <marker date="1485873649374" expanded="true" signature="2150:2256" ph="SELECT p.id,... project_customer" />
+                <marker date="1485873649374" expanded="true" signature="2150:2336" ph="SELECT p.id,... project_customer" />
+                <marker date="1485873649374" expanded="true" signature="2150:2881" ph="SELECT p.id,... " />
+                <marker date="1485873649374" expanded="true" signature="2352:2537" ph="SELECT p.id,... project_manager" />
+                <marker date="1485873649374" expanded="true" signature="2553:2881" ph="SELECT p.id,... task_executor" />
+                <marker date="1485873649374" expanded="true" signature="3028:3113" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project_customer... " />
               </folding>
             </state>
           </provider>
@@ -1607,12 +1607,12 @@
       <workItem from="1485192499951" duration="11276000" />
       <workItem from="1485278019167" duration="5806000" />
       <workItem from="1485284141775" duration="123700000" />
-      <workItem from="1485852864026" duration="20276000" />
+      <workItem from="1485852864026" duration="20410000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="355249000" />
+    <option name="totallyTimeSpent" value="355383000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2208,24 +2208,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/jdbc/postgresql/JdbcProjectDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="137" column="50" selection-start-line="137" selection-start-column="50" selection-end-line="137" selection-end-column="50" />
+        <state relative-caret-position="-4">
+          <caret line="42" column="65" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
           <folding>
-            <marker date="1485873494355" expanded="true" signature="1438:1541" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project... " />
-            <marker date="1485873494355" expanded="true" signature="1603:1687" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project_manager... " />
-            <marker date="1485873494355" expanded="true" signature="1733:1789" ph="DELETE FROM " />
-            <marker date="1485873494355" expanded="true" signature="1835:1952" ph="UPDATE \&quot;Pro... " />
-            <marker date="1485873494355" expanded="true" signature="1835:1984" ph="UPDATE \&quot;Pro... " />
-            <marker date="1485873494355" expanded="true" signature="2036:2079" ph="SELECT * FRO... project" />
-            <marker date="1485873494355" expanded="true" signature="2036:2094" ph="SELECT * FRO... project" />
-            <marker date="1485873494355" expanded="true" signature="2150:2197" ph="SELECT p.id,... " />
-            <marker date="1485873494355" expanded="true" signature="2150:2217" ph="SELECT p.id,... " />
-            <marker date="1485873494355" expanded="true" signature="2150:2244" ph="SELECT p.id,... project_customer" />
-            <marker date="1485873494355" expanded="true" signature="2150:2324" ph="SELECT p.id,... project_customer" />
-            <marker date="1485873494355" expanded="true" signature="2150:2845" ph="SELECT p.id,... " />
-            <marker date="1485873494355" expanded="true" signature="2340:2513" ph="SELECT p.id,... project_manager" />
-            <marker date="1485873494355" expanded="true" signature="2529:2845" ph="SELECT p.id,... task_executor" />
-            <marker date="1485873494355" expanded="true" signature="2992:3077" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project_customer... " />
+            <marker date="1485873649374" expanded="true" signature="1438:1541" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project... " />
+            <marker date="1485873649374" expanded="true" signature="1603:1687" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project_manager... " />
+            <marker date="1485873649374" expanded="true" signature="1733:1789" ph="DELETE FROM " />
+            <marker date="1485873649374" expanded="true" signature="1835:1952" ph="UPDATE \&quot;Pro... " />
+            <marker date="1485873649374" expanded="true" signature="1835:1984" ph="UPDATE \&quot;Pro... " />
+            <marker date="1485873649374" expanded="true" signature="2036:2079" ph="SELECT * FRO... project" />
+            <marker date="1485873649374" expanded="true" signature="2036:2094" ph="SELECT * FRO... project" />
+            <marker date="1485873649374" expanded="true" signature="2150:2209" ph="SELECT p.id,... " />
+            <marker date="1485873649374" expanded="true" signature="2150:2229" ph="SELECT p.id,... " />
+            <marker date="1485873649374" expanded="true" signature="2150:2256" ph="SELECT p.id,... project_customer" />
+            <marker date="1485873649374" expanded="true" signature="2150:2336" ph="SELECT p.id,... project_customer" />
+            <marker date="1485873649374" expanded="true" signature="2150:2881" ph="SELECT p.id,... " />
+            <marker date="1485873649374" expanded="true" signature="2352:2537" ph="SELECT p.id,... project_manager" />
+            <marker date="1485873649374" expanded="true" signature="2553:2881" ph="SELECT p.id,... task_executor" />
+            <marker date="1485873649374" expanded="true" signature="3028:3113" ph="INSERT INTO \&quot;ProjectManagement\&quot;.project_customer... " />
           </folding>
         </state>
       </provider>
